@@ -1,7 +1,9 @@
 // MainActivity.kt
 package com.example.f1info
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -22,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupViewPager()
+        val btnCalendar = findViewById<Button>(R.id.btnCalendar)
+        btnCalendar.setOnClickListener {
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun setupViewPager() {

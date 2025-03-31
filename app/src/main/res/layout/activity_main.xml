@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -19,6 +20,16 @@
             android:background="?attr/colorPrimary"
             app:title="F1 Info"
             app:titleTextColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalendarz F1"
+            android:layout_margin="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            tools:ignore="HardcodedText" />
+
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"

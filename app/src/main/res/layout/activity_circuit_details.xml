@@ -1,0 +1,114 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/mainCircuitLayout"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Statystyki toru -->
+        <TextView
+            android:id="@+id/tvFirstGrandPrix"
+            android:text="First Grand Prix: -"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvLapCount"
+            android:text="Number of Laps: -"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCircuitLength"
+            android:text="Circuit Length: -"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvRaceDistance"
+            android:text="Race Distance: -"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvLapRecord"
+            android:text="Lap Record: -"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <!-- Nazwa toru -->
+        <TextView
+            android:id="@+id/tvCircuitName"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Kraj -->
+        <TextView
+            android:id="@+id/tvCountry"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Data -->
+        <TextView
+            android:id="@+id/tvRaceDate"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Obraz toru -->
+        <ImageView
+            android:id="@+id/ivCircuitImage"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+
+        <!-- Opis toru -->
+        <TextView
+            android:id="@+id/tvCircuitInfo"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Nagłówek tabeli -->
+        <TextView
+            android:id="@+id/tvLapHeader"
+            android:text="10 najszybszych okrążeń"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            tools:ignore="HardcodedText" />
+
+        <!-- RecyclerView dla okrążeń -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewLaps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+    </LinearLayout>
+</ScrollView>
