@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+
+
 
     <application
         android:allowBackup="true"
@@ -15,10 +20,13 @@
         android:theme="@style/Theme.F1Info"
         tools:targetApi="31">
 
+
         <activity android:name=".CircuitDetailsActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".CalendarActivity" />
+        <receiver android:name=".NotificationReceiver"/>
 
 
-        <activity android:name=".CalendarActivity" /> <!-- 👈 DODANE -->
 
         <activity
             android:name=".MainActivity"
@@ -28,6 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
     </application>
 </manifest>

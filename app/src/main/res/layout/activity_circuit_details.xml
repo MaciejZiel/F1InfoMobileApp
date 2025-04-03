@@ -1,7 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/mainCircuitLayout"
@@ -9,48 +10,6 @@
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <!-- Statystyki toru -->
-        <TextView
-            android:id="@+id/tvFirstGrandPrix"
-            android:text="First Grand Prix: -"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/tvLapCount"
-            android:text="Number of Laps: -"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/tvCircuitLength"
-            android:text="Circuit Length: -"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/tvRaceDistance"
-            android:text="Race Distance: -"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/tvLapRecord"
-            android:text="Lap Record: -"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="HardcodedText" />
 
         <!-- Nazwa toru -->
         <TextView
@@ -91,24 +50,188 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!-- Nagłówek tabeli -->
-        <TextView
-            android:id="@+id/tvLapHeader"
-            android:text="10 najszybszych okrążeń"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            tools:ignore="HardcodedText" />
-
-        <!-- RecyclerView dla okrążeń -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewLaps"
+        <!-- Stylizowane statystyki toru -->
+        <LinearLayout
+            android:id="@+id/layoutCircuitStats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible" />
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:divider="?android:attr/dividerHorizontal"
+            android:showDividers="middle"
+            android:dividerPadding="8dp">
+
+            <!-- First GP + Laps -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="First Grand Prix"
+                            android:textSize="14sp"
+                            android:textColor="#555555"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/tvFirstGrandPrix"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Number of Laps"
+                            android:textSize="14sp"
+                            android:textColor="#555555"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/tvLapCount"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Length + Distance -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Circuit Length"
+                            android:textSize="14sp"
+                            android:textColor="#555555"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/tvCircuitLength"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Race Distance"
+                            android:textSize="14sp"
+                            android:textColor="#555555"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText" />
+                        <TextView
+                            android:id="@+id/tvRaceDistance"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Lap Record -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Lap Record"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:id="@+id/tvLapRecord"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

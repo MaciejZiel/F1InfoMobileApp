@@ -3,13 +3,9 @@ package com.example.f1info
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.f1info.adapters.LapAdapter
 import com.example.f1info.models.CircuitStats
 import com.example.f1info.models.Lap
 import kotlinx.coroutines.CoroutineScope
@@ -21,38 +17,33 @@ import java.net.URL
 
 class CircuitDetailsActivity : AppCompatActivity() {
 
-    @SuppressLint("CutPasteId")
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_circuit_details)
-        val tvLapHeader = findViewById<TextView>(R.id.tvLapHeader)
+
         val tvCircuitName = findViewById<TextView>(R.id.tvCircuitName)
         val tvRaceDate = findViewById<TextView>(R.id.tvRaceDate)
         val tvCountry = findViewById<TextView>(R.id.tvCountry)
         val ivCircuitImage = findViewById<ImageView>(R.id.ivCircuitImage)
         val tvCircuitInfo = findViewById<TextView>(R.id.tvCircuitInfo)
+        val tvCircuitLength = findViewById<TextView>(R.id.tvCircuitLength)
+        val tvRaceDistance = findViewById<TextView>(R.id.tvRaceDistance)
+        val tvLapRecord = findViewById<TextView>(R.id.tvLapRecord)
+        val tvFirstGrandPrix = findViewById<TextView>(R.id.tvFirstGrandPrix)
+        val tvLapCount = findViewById<TextView>(R.id.tvLapCount)
 
         val circuitName = intent.getStringExtra("circuit_name") ?: "Unknown"
         val raceDate = intent.getStringExtra("race_date") ?: "-"
         val country = intent.getStringExtra("country") ?: "-"
-//        val circuitImageUrl = intent.getStringExtra("image_url") ?: ""
-        val circuitImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Circuit_Monza_2000.png"
-        Log.d("CircuitDebug", "Image URL: $circuitImageUrl")
-
-
         val description = intent.getStringExtra("description") ?: "Brak opisu."
+        val circuitId = intent.getStringExtra("circuit_id") ?: ""
 
         tvCircuitName.text = circuitName
         tvRaceDate.text = raceDate
         tvCountry.text = country
         tvCircuitInfo.text = description
 
-//        Glide.with(this)
-//            .load(circuitImageUrl)
-//            .into(ivCircuitImage)
-//        ivCircuitImage.setImageResource(R.drawable.cover)
-
-        val circuitId = intent.getStringExtra("circuit_id") ?: ""
         val imageRes = when (circuitId.lowercase()) {
             "shanghai" -> R.drawable.china_circuit
             "albert_park" -> R.drawable.australia_circuit
@@ -81,78 +72,49 @@ class CircuitDetailsActivity : AppCompatActivity() {
             "imola" -> R.drawable.emilia_romagna_circuit
             else -> R.drawable.test
         }
-        Log.d("CircuitDebug", "circuitId = $circuitId")
-
 
         ivCircuitImage.setImageResource(imageRes)
 
+        val stats = getCircuitStats(circuitId)
+        tvCircuitLength.text = stats.circuitLength
+        tvRaceDistance.text = stats.raceDistance
+        tvLapRecord.text = stats.lapRecord
+        tvFirstGrandPrix.text = stats.firstGrandPrix
+        tvLapCount.text = stats.lapCount
+    }
 
 
-        val recyclerViewLaps = findViewById<RecyclerView>(R.id.recyclerViewLaps)
-        recyclerViewLaps.layoutManager = LinearLayoutManager(this)
-
-        val testLaps = listOf(
-            Lap("44", "1:23.456"),
-            Lap("1", "1:23.789"),
-            Lap("16", "1:24.012")
-        )
-
-        recyclerViewLaps.adapter = LapAdapter(testLaps)
-        recyclerViewLaps.visibility = View.VISIBLE
-
-        findViewById<TextView>(R.id.tvLapHeader).visibility = View.VISIBLE
 
 
-        // 🔽 TU WKLEJ:
-        val meetingKey = intent.getIntExtra("meeting_key", -1)
-        val stats = when (circuitId.lowercase()) {
-            "baku" -> CircuitStats(
-                firstGrandPrix = "2016",
-                lapCount = "51",
-                circuitLength = "6.003 km",
-                raceDistance = "306.049 km",
-                lapRecord = "1:43.009 (Charles Leclerc, 2019)"
-            )
+
+
+    private fun getCircuitStats(circuitId: String): CircuitStats {
+        return when (circuitId.lowercase()) {
+            "suzuka" -> CircuitStats("1987", "53", "5.807 km", "307.471 km", "1:30.983 (Lewis Hamilton, 2019)")
+            "albert_park" -> CircuitStats("1996", "58", "5.278 km", "306.124 km", "1:20.235 (Charles Leclerc, 2022)")
+            "monza" -> CircuitStats("1950", "53", "5.793 km", "306.72 km", "1:21.046 (Rubens Barrichello, 2004)")
+            "spa" -> CircuitStats("1950", "44", "7.004 km", "308.052 km", "1:46.286 (Valtteri Bottas, 2018)")
+            "bahrain" -> CircuitStats("2004", "57", "5.412 km", "308.238 km", "1:31.447 (Pedro de la Rosa, 2005)")
+            "silverstone" -> CircuitStats("1950", "52", "5.891 km", "306.198 km", "1:27.097 (Max Verstappen, 2020)")
+            "hungaroring" -> CircuitStats("1986", "70", "4.381 km", "306.63 km", "1:16.627 (Lewis Hamilton, 2020)")
+            "americas" -> CircuitStats("2012", "56", "5.513 km", "308.405 km", "1:36.169 (Charles Leclerc, 2019)")
+            "yas_marina" -> CircuitStats("2009", "58", "5.281 km", "306.183 km", "1:26.103 (Max Verstappen, 2021)")
+            "interlagos" -> CircuitStats("1973", "71", "4.309 km", "305.879 km", "1:10.540 (Valtteri Bottas, 2018)")
+            "rodriguez" -> CircuitStats("1963", "71", "4.304 km", "305.354 km", "1:17.774 (Valtteri Bottas, 2021)")
+            "villeneuve" -> CircuitStats("1978", "70", "4.361 km", "305.27 km", "1:13.078 (Valtteri Bottas, 2019)")
+            "zandvoort" -> CircuitStats("1952", "72", "4.259 km", "306.648 km", "1:11.097 (Lewis Hamilton, 2021)")
+            "baku" -> CircuitStats("2016", "51", "6.003 km", "306.049 km", "1:43.009 (Charles Leclerc, 2019)")
+            "miami" -> CircuitStats("2022", "57", "5.412 km", "308.326 km", "1:29.708 (Max Verstappen, 2023)")
+            "jeddah" -> CircuitStats("2021", "50", "6.174 km", "308.45 km", "1:30.734 (Lewis Hamilton, 2021)")
+            "losail" -> CircuitStats("2021", "57", "5.419 km", "308.611 km", "1:24.319 (Max Verstappen, 2021)")
+            "vegas" -> CircuitStats("2023", "50", "6.201 km", "310.05 km", "1:35.490 (Oscar Piastri, 2023)")
+            "marina_bay" -> CircuitStats("2008", "62", "4.928 km", "306.143 km", "1:35.867 (Lewis Hamilton, 2023)")
+            "shanghai" -> CircuitStats("2004", "56", "5.451 km", "305.066 km", "1:32.238 (Michael Schumacher, 2004)")
+            "paul_ricard" -> CircuitStats("1971", "53", "5.842 km", "309.69 km", "1:32.740 (Sebastian Vettel, 2019)")
+            "red_bull_ring" -> CircuitStats("1970", "71", "4.318 km", "306.452 km", "1:05.619 (Carlos Sainz, 2020)")
+            "catalunya" -> CircuitStats("1991", "66", "4.657 km", "307.236 km", "1:16.330 (Max Verstappen, 2023)")
+            "imola" -> CircuitStats("1980", "63", "4.909 km", "309.049 km", "1:15.484 (Lewis Hamilton, 2020)")
             else -> CircuitStats()
         }
-
-        findViewById<TextView>(R.id.tvFirstGrandPrix).text = stats.firstGrandPrix
-        findViewById<TextView>(R.id.tvLapCount).text = stats.lapCount
-
-
-
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val lapResponse = URL("https://api.openf1.org/v1/lap_times?meeting_key=$meetingKey").readText()
-                val lapsJson = JSONArray(lapResponse)
-
-                val allLaps = mutableListOf<Lap>()
-                for (i in 0 until lapsJson.length()) {
-                    val lap = lapsJson.getJSONObject(i)
-                    val driverNumber = lap.optString("driver_number", "-")
-                    val lapTime = lap.optString("lap_time", "-")
-                    if (lapTime != "-") {
-                        allLaps.add(Lap(driverNumber, lapTime))
-                    }
-                }
-
-                val sorted = allLaps.sortedBy { it.lapTime }.take(10)
-
-                withContext(Dispatchers.Main) {
-                    if (sorted.isNotEmpty()) {
-                        recyclerViewLaps.adapter = LapAdapter(sorted)
-                        recyclerViewLaps.visibility = View.VISIBLE
-                        tvLapHeader.visibility = View.VISIBLE
-                    }
-                }
-
-
-            } catch (e: Exception) {
-                Log.e("LapError", "Nie udało się pobrać okrążeń", e)
-            }
-        }
-
     }
 }
-
-

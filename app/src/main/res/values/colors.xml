@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="redbull_blue">#1E41FF</color>
+    <color name="ferrari_red">#DC0000</color>
+    <color name="mercedes_teal">#00D2BE</color>
+    <color name="mclaren_orange">#FF8700</color>
+    <color name="aston_green">#006F62</color>
+    <color name="default_primary">#121212</color>
+    <color name="alpine_blue">#005BA9</color>
+    <color name="williams_blue">#00A3E0</color>
+    <color name="sauber_green">#52E252</color>
+    <color name="rb_violet">#5728FF</color>
+    <color name="haas_red">#B6BABD</color>
 </resources>

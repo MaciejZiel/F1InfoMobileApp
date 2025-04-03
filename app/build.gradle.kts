@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -44,6 +46,10 @@ android {
 }
 
 dependencies {
+    implementation(libs.material.v1120)
+    //noinspection UseTomlInstead
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation(libs.material.v1110)
     implementation(libs.glide)
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.compiler)

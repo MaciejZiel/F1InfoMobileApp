@@ -1,5 +1,4 @@
 package com.example.f1info.adapters
-
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.f1info.CircuitDetailsActivity
 import com.example.f1info.R
 import com.example.f1info.models.Race
+import java.text.SimpleDateFormat
+import java.util.*
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 class CalendarAdapter(private val races: List<Race>) : RecyclerView.Adapter<CalendarAdapter.RaceViewHolder>() {
 
@@ -108,21 +111,31 @@ class CalendarAdapter(private val races: List<Race>) : RecyclerView.Adapter<Cale
                 putExtra("circuit_name", race.sessionName)
                 putExtra("country", race.country)
                 putExtra("race_date", race.date)
-//                putExtra("image_url", getCircuitImageUrl(race.circuitId))
                 putExtra("description", getCircuitDescription(race.circuitId))
                 putExtra("meeting_key", race.meetingKey)
                 putExtra("circuit_id", race.circuitId)
-
-
-
             }
             context.startActivity(intent)
         }
 
         holder.raceName.text = race.sessionName
         holder.country.text = "${getFlagEmoji(race.country)} ${race.country}"
-        holder.date.text = race.date
+        holder.date.text = formatDate(race.date)
+
     }
 
     override fun getItemCount() = races.size
+}
+
+
+fun formatDate(dateString: String): String {
+    return try {
+        val zdt = ZonedDateTime.parse(dateString, DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val instant = zdt.toInstant()
+        val date = Date.from(instant)
+        val formatter = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
+        formatter.format(date)
+    } catch (e: Exception) {
+        dateString // fallback
+    }
 }
