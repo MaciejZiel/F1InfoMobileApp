@@ -2,31 +2,28 @@ package com.example.f1info
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.f1info.models.CircuitStats
-import com.example.f1info.models.Lap
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import org.json.JSONArray
-import java.net.URL
+import com.example.f1info.models.CircuitDescription
 
+@Suppress("CAST_NEVER_SUCCEEDS", "DEPRECATION")
 class CircuitDetailsActivity : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_circuit_details)
-
         val tvCircuitName = findViewById<TextView>(R.id.tvCircuitName)
         val tvRaceDate = findViewById<TextView>(R.id.tvRaceDate)
         val tvCountry = findViewById<TextView>(R.id.tvCountry)
         val ivCircuitImage = findViewById<ImageView>(R.id.ivCircuitImage)
-        val tvCircuitInfo = findViewById<TextView>(R.id.tvCircuitInfo)
+        val tvCircuitInfoMain = findViewById<TextView>(R.id.tvCircuitInfoMain)
+        val tvCircuitInfoChar = findViewById<TextView>(R.id.tvCircuitInfoChar)
+        val tvCircuitInfoChallenges = findViewById<TextView>(R.id.tvCircuitInfoChallenges)
+        val tvCircuitInfoTrivia = findViewById<TextView>(R.id.tvCircuitInfoTrivia)
+        val tvCircuitInfoDrs = findViewById<TextView>(R.id.tvCircuitInfoDrs)
         val tvCircuitLength = findViewById<TextView>(R.id.tvCircuitLength)
         val tvRaceDistance = findViewById<TextView>(R.id.tvRaceDistance)
         val tvLapRecord = findViewById<TextView>(R.id.tvLapRecord)
@@ -36,15 +33,22 @@ class CircuitDetailsActivity : AppCompatActivity() {
         val circuitName = intent.getStringExtra("circuit_name") ?: "Unknown"
         val raceDate = intent.getStringExtra("race_date") ?: "-"
         val country = intent.getStringExtra("country") ?: "-"
-        val description = intent.getStringExtra("description") ?: "Brak opisu."
+        val description = intent.getSerializableExtra("description") as? CircuitDescription
         val circuitId = intent.getStringExtra("circuit_id") ?: ""
 
         tvCircuitName.text = circuitName
         tvRaceDate.text = raceDate
         tvCountry.text = country
-        tvCircuitInfo.text = description
 
-        val imageRes = when (circuitId.lowercase()) {
+        description?.let {
+            tvCircuitInfoMain.text = it.main
+            tvCircuitInfoChar.text = it.charakterystyka
+            tvCircuitInfoChallenges.text = it.wyzwania
+            tvCircuitInfoTrivia.text = it.ciekawostka
+            tvCircuitInfoDrs.text = it.drs
+        }
+
+        val trackImages = when (circuitId.lowercase()) {
             "shanghai" -> R.drawable.china_circuit
             "albert_park" -> R.drawable.australia_circuit
             "bahrain" -> R.drawable.bahrain_circuit
@@ -73,7 +77,7 @@ class CircuitDetailsActivity : AppCompatActivity() {
             else -> R.drawable.test
         }
 
-        ivCircuitImage.setImageResource(imageRes)
+        ivCircuitImage.setImageResource(trackImages)
 
         val stats = getCircuitStats(circuitId)
         tvCircuitLength.text = stats.circuitLength
@@ -82,11 +86,6 @@ class CircuitDetailsActivity : AppCompatActivity() {
         tvFirstGrandPrix.text = stats.firstGrandPrix
         tvLapCount.text = stats.lapCount
     }
-
-
-
-
-
 
     private fun getCircuitStats(circuitId: String): CircuitStats {
         return when (circuitId.lowercase()) {
@@ -114,6 +113,7 @@ class CircuitDetailsActivity : AppCompatActivity() {
             "red_bull_ring" -> CircuitStats("1970", "71", "4.318 km", "306.452 km", "1:05.619 (Carlos Sainz, 2020)")
             "catalunya" -> CircuitStats("1991", "66", "4.657 km", "307.236 km", "1:16.330 (Max Verstappen, 2023)")
             "imola" -> CircuitStats("1980", "63", "4.909 km", "309.049 km", "1:15.484 (Lewis Hamilton, 2020)")
+            "monaco" -> CircuitStats("1950", "78", "3.337 km", "260.286 km", "1:12.909 (Lewis Hamilton, 2021)")
             else -> CircuitStats()
         }
     }

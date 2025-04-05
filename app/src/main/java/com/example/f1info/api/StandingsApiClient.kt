@@ -5,7 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object OpenF1Client {
+object StandingsApiClient {
 
     private const val BASE_URL = "https://f1-live-standings-api.onrender.com/"
 
@@ -25,4 +25,3 @@ object OpenF1Client {
             .build()
     }
 }
-

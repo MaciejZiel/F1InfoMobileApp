@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.f1info.api.F1ApiService
-import com.example.f1info.api.RetrofitClient
+import com.example.f1info.api.OpenF1ApiService
+import com.example.f1info.api.OpenF1Client
 import com.example.f1info.databinding.FragmentRaceInfoBinding
 import com.example.f1info.models.Session
 import kotlinx.coroutines.launch
@@ -16,10 +16,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class RaceInfoFragment : Fragment() {
-
     private var _binding: FragmentRaceInfoBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var apiService: F1ApiService
+    private lateinit var apiService: OpenF1ApiService
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,18 +25,15 @@ class RaceInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentRaceInfoBinding.inflate(inflater, container, false)
-        return binding.root
+        return _binding?.root ?: throw IllegalStateException("Binding is null in onCreateView")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        apiService = RetrofitClient.getInstance().create(F1ApiService::class.java)
-
-        binding.swipeRefresh.setOnRefreshListener {
+        apiService = OpenF1Client.getInstance().create(OpenF1ApiService::class.java)
+        _binding?.swipeRefresh?.setOnRefreshListener {
             loadCurrentRaceInfo()
         }
-
         loadCurrentRaceInfo()
     }
 
@@ -63,7 +58,9 @@ class RaceInfoFragment : Fragment() {
 
             } catch (e: Exception) {
                 if (e.message != "Job was cancelled") {
-                    Toast.makeText(context, "Błąd: ${e.message}", Toast.LENGTH_SHORT).show()
+                    context?.let {
+                        Toast.makeText(it, "Błąd: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
                 }
             } finally {
                 _binding?.progressBar?.visibility = View.GONE
@@ -78,13 +75,11 @@ class RaceInfoFragment : Fragment() {
             cardRaceInfo.visibility = View.VISIBLE
             tvSessionName.text = session.session_name
             tvTrackName.text = session.meeting_name
-
             val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
             dateFormat.timeZone = TimeZone.getDefault()
             val date = Date(session.session_start_date * 1000)
             tvDate.text = dateFormat.format(date)
         }
-
         loadSessionResults(session.session_key)
     }
 
@@ -92,7 +87,6 @@ class RaceInfoFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val results = apiService.getSessionResults(sessionKey)
-
                 _binding?.tvTopThree?.text = if (results.isNotEmpty()) {
                     buildString {
                         append("TOP 3:\n")
@@ -104,7 +98,7 @@ class RaceInfoFragment : Fragment() {
                     "Wyniki jeszcze niedostępne"
                 }
 
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 _binding?.tvTopThree?.text = "Nie udało się załadować wyników"
             }
         }

@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wybierz sezon"
+        android:text="Sezon"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wybierz zespół"
+        android:text="Wybierz motyw aplikacji"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"

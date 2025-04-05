@@ -46,11 +46,15 @@ android {
 }
 
 dependencies {
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
     implementation(libs.material.v1120)
+    
     //noinspection UseTomlInstead
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation(libs.material.v1110)
     implementation(libs.glide)
+
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.compiler)
     implementation(libs.androidx.core.ktx.v1150)

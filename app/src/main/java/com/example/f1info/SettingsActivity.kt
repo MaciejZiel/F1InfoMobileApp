@@ -1,10 +1,6 @@
 package com.example.f1info
 
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.os.Build
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -12,23 +8,18 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.f1info.databinding.ActivitySettingsBinding
-import android.provider.Settings
 import androidx.appcompat.app.AppCompatDelegate
-
 
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
 
+    @SuppressLint("UseKtx")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val prefs = getSharedPreferences("F1_PREFS", MODE_PRIVATE)  // 👈 to musi być najpierw!
-
-        // 🌗 Tryb ciemny
+        val prefs = getSharedPreferences("F1_PREFS", MODE_PRIVATE)
         val nightModeOn = prefs.getBoolean("dark_mode", false)
         binding.switchDarkMode.isChecked = nightModeOn
 
@@ -40,10 +31,9 @@ class SettingsActivity : AppCompatActivity() {
             )
         }
 
-        // 🔧 Ulubiony zespół
         val savedTeam = prefs.getString("favorite_team", "Brak") ?: "Brak"
         val teams = listOf(
-            "Brak",
+            "F1",
             "Red Bull",
             "Ferrari",
             "Mercedes",
@@ -62,18 +52,18 @@ class SettingsActivity : AppCompatActivity() {
         binding.teamSelector.setSelection(teams.indexOf(savedTeam))
 
         binding.teamSelector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            @SuppressLint("ShowToast")
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedTeam = parent?.getItemAtPosition(position).toString()
                 prefs.edit().putString("favorite_team", selectedTeam).apply()
-                Toast.makeText(this@SettingsActivity, "Ulubiony zespół: $selectedTeam", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SettingsActivity, "Ulubiony zespół: $selectedTeam", Toast.LENGTH_SHORT)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-        // 📅 Sezon
-        val savedSeason = prefs.getString("selected_season", "2023") ?: "2023"
-        val seasons = listOf("2023", "2024", "2025")
+        val savedSeason = prefs.getString("selected_season", "2025") ?: "2023"
+        val seasons = (1950..2025).map { it.toString() }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, seasons)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.seasonSelector.adapter = adapter
@@ -84,10 +74,11 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         binding.seasonSelector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            @SuppressLint("ShowToast")
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedSeason = parent?.getItemAtPosition(position).toString()
                 prefs.edit().putString("selected_season", selectedSeason).apply()
-                Toast.makeText(this@SettingsActivity, "Zapisano sezon: $selectedSeason", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SettingsActivity, "Zapisano sezon: $selectedSeason", Toast.LENGTH_SHORT)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}

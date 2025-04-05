@@ -5,5 +5,5 @@ data class Race(
     val country: String,
     val date: String,
     val circuitId: String,
-    val meetingKey: Int  // 🆕
+    val meetingKey: Int
 )

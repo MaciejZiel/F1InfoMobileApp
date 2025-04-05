@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,15 +11,6 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Klasyfikacja kierowców"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNoData"
@@ -31,7 +21,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/teamLogoBackground"
+            android:layout_marginTop="30dp"
+            tools:ignore="HardcodedText,NotSibling" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -46,9 +38,12 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+            android:layout_weight="1"
+            android:visibility="visible"
+            tools:listitem="@layout/item_driver_standing"
+            tools:ignore="MissingConstraints" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

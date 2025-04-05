@@ -16,12 +16,18 @@
             android:id="@+id/tvNoData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brak danych o najbliższym wyścigu"
+            android:text="Brak danych z wyścigu"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
+            android:layout_marginTop="30dp"
+            tools:ignore="HardcodedText,NotSibling" />
+
+
+
+
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -53,7 +59,8 @@
                     android:layout_height="wrap_content"
                     android:text="Nazwa sesji"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvTrackName"
@@ -61,7 +68,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Nazwa toru"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvDate"
@@ -69,7 +77,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Data i czas"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
 
                 <View
                     android:layout_width="match_parent"
@@ -83,7 +92,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Ładowanie wyników..."
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 

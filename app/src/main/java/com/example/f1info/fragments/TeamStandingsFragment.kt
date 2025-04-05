@@ -1,26 +1,24 @@
-
-// TeamStandingsFragment.kt
 package com.example.f1info.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.f1info.adapters.TeamStandingsAdapter
-import com.example.f1info.api.F1ApiService
-import com.example.f1info.api.RetrofitClient
+import com.example.f1info.api.StandingsApiService
+import com.example.f1info.api.StandingsApiClient
 import com.example.f1info.databinding.FragmentTeamStandingsBinding
+import com.example.f1info.models.ConstructorStanding
+import com.example.f1info.models.DriverStanding
 import kotlinx.coroutines.launch
 
 class TeamStandingsFragment : Fragment() {
-
     private var _binding: FragmentTeamStandingsBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var apiService: F1ApiService
+    private val binding get() = _binding ?: throw IllegalStateException("Binding is null")
+    private lateinit var apiService: StandingsApiService
     private lateinit var adapter: TeamStandingsAdapter
 
     override fun onCreateView(
@@ -34,11 +32,8 @@ class TeamStandingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        apiService = RetrofitClient.getInstance().create(F1ApiService::class.java)
-
+        apiService = StandingsApiClient.getInstance().create(StandingsApiService::class.java)
         setupRecyclerView()
-
         binding.swipeRefresh.setOnRefreshListener {
             loadTeamStandings()
         }
@@ -52,26 +47,50 @@ class TeamStandingsFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
     }
 
+    private fun calculateConstructorStandings(driverStandings: List<DriverStanding>): List<ConstructorStanding> {
+        val constructorPointsMap = mutableMapOf<String, Double>()
+
+        for (driver in driverStandings) {
+            val constructorName = driver.team
+            val driverPoints = driver.points
+            constructorPointsMap[constructorName] = constructorPointsMap.getOrDefault(constructorName, 0.0) + driverPoints
+        }
+
+        val constructorStandings = constructorPointsMap.map { entry ->
+            ConstructorStanding(
+                constructor_name = entry.key,
+                position = 0,
+                points = entry.value
+            )
+        }
+
+        return constructorStandings
+            .sortedByDescending { it.points }
+            .mapIndexed { index, constructor ->
+                constructor.copy(position = index + 1)
+            }
+    }
+
     private fun loadTeamStandings() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
-                binding.progressBar.visibility = View.VISIBLE
-
-                val standings = apiService.getConstructorStandings()
-
-                if (standings.isNotEmpty()) {
-                    adapter.submitList(standings)
-                    binding.tvNoData.visibility = View.GONE
-                } else {
-                    binding.tvNoData.visibility = View.VISIBLE
+                _binding?.progressBar?.visibility = View.VISIBLE
+                val driverStandings = apiService.getLiveDriverStandings()
+                val constructorStandings = calculateConstructorStandings(driverStandings)
+                _binding?.let { binding ->
+                    if (constructorStandings.isNotEmpty()) {
+                        adapter.submitList(constructorStandings)
+                        binding.tvNoData.visibility = View.GONE
+                    } else {
+                        binding.tvNoData.visibility = View.VISIBLE
+                    }
                 }
 
-            } catch (e: Exception) {
-                Toast.makeText(context, "Błąd: ${e.message}", Toast.LENGTH_SHORT).show()
-                binding.tvNoData.visibility = View.VISIBLE
+            } catch (_: Exception) {
+                _binding?.tvNoData?.visibility = View.VISIBLE
             } finally {
-                binding.progressBar.visibility = View.GONE
-                binding.swipeRefresh.isRefreshing = false
+                _binding?.progressBar?.visibility = View.GONE
+                _binding?.swipeRefresh?.isRefreshing = false
             }
         }
     }

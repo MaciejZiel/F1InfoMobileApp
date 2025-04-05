@@ -1,237 +1,414 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/mainCircuitLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:background="@color/background_primary"
+        android:gravity="center_horizontal">
 
-        <!-- Nazwa toru -->
-        <TextView
-            android:id="@+id/tvCircuitName"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <!-- Kraj -->
-        <TextView
-            android:id="@+id/tvCountry"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <!-- Data -->
-        <TextView
-            android:id="@+id/tvRaceDate"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <!-- Obraz toru -->
-        <ImageView
-            android:id="@+id/ivCircuitImage"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            tools:ignore="ContentDescription" />
-
-        <!-- Opis toru -->
-        <TextView
-            android:id="@+id/tvCircuitInfo"
-            android:textSize="16sp"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <!-- Stylizowane statystyki toru -->
         <LinearLayout
-            android:id="@+id/layoutCircuitStats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:divider="?android:attr/dividerHorizontal"
-            android:showDividers="middle"
-            android:dividerPadding="8dp">
+            android:maxWidth="600dp"
+            android:layout_gravity="center_horizontal">
 
-            <!-- First GP + Laps -->
-            <LinearLayout
+            <!-- Nazwa toru -->
+            <TextView
+                android:id="@+id/tvCircuitName"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/text_primary"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:text="First Grand Prix"
-                            android:textSize="14sp"
-                            android:textColor="#555555"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:ignore="HardcodedText" />
-                        <TextView
-                            android:id="@+id/tvFirstGrandPrix"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:text="Number of Laps"
-                            android:textSize="14sp"
-                            android:textColor="#555555"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:ignore="HardcodedText" />
-                        <TextView
-                            android:id="@+id/tvLapCount"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <!-- Length + Distance -->
-            <LinearLayout
+            <!-- Kraj -->
+            <TextView
+                android:id="@+id/tvCountry"
+                android:textSize="18sp"
+                android:textColor="@color/text_secondary"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp">
+            <!-- Data -->
+            <TextView
+                android:id="@+id/tvRaceDate"
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+            <!-- Obraz toru -->
+            <ImageView
+                android:id="@+id/ivCircuitImage"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
 
-                        <TextView
-                            android:text="Circuit Length"
-                            android:textSize="14sp"
-                            android:textColor="#555555"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:ignore="HardcodedText" />
-                        <TextView
-                            android:id="@+id/tvCircuitLength"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:text="Race Distance"
-                            android:textSize="14sp"
-                            android:textColor="#555555"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:ignore="HardcodedText" />
-                        <TextView
-                            android:id="@+id/tvRaceDistance"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <!-- Lap Record -->
+            <!-- Opis toru -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="4dp"
                 app:cardElevation="2dp"
-                app:cardCornerRadius="8dp">
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@color/background_secondary">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:padding="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_secondary">
 
-                    <TextView
-                        android:text="Lap Record"
-                        android:textSize="14sp"
-                        android:textColor="#555555"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:ignore="HardcodedText" />
-                    <TextView
-                        android:id="@+id/tvLapRecord"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                    <!-- Sekcja: Opis -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_inner_card"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Opis toru"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvCircuitInfoMain"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- Sekcja: Charakterystyka -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_inner_card"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Charakterystyka"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvCircuitInfoChar"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- Sekcja: Wyzwania -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_inner_card"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Wyzwania"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvCircuitInfoChallenges"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- Sekcja: Ciekawostka -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_inner_card"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Ciekawostka"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvCircuitInfoTrivia"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- Sekcja: DRS -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_inner_card"
+                        android:padding="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="DRS"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvCircuitInfoDrs"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
+            <!-- Statystyki toru -->
+            <!-- Statystyki toru - nowe wspólne tło -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@color/background_secondary">
 
+                <LinearLayout
+                    android:id="@+id/layoutCircuitStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <!-- First GP + Number of Laps -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- First GP -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:background="@drawable/bg_inner_card">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="First Grand Prix"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                                <TextView
+                                    android:id="@+id/tvFirstGrandPrix"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_primary"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Number of Laps -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:background="@drawable/bg_inner_card">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Number of Laps"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                                <TextView
+                                    android:id="@+id/tvLapCount"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_primary"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <!-- Length + Distance -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Circuit Length -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:background="@drawable/bg_inner_card">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Circuit Length"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                                <TextView
+                                    android:id="@+id/tvCircuitLength"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_primary"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Race Distance -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:background="@drawable/bg_inner_card">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Race Distance"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                                <TextView
+                                    android:id="@+id/tvRaceDistance"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_primary"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <!-- Lap Record -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp"
+                        android:background="@drawable/bg_inner_card">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="12dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="Lap Record"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/tvLapRecord"
+                                android:textSize="16sp"
+                                android:textColor="@color/text_primary"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
     </LinearLayout>
-
 </ScrollView>

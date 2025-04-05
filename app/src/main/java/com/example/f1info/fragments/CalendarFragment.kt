@@ -2,7 +2,10 @@
 package com.example.f1info.fragments
 
 import android.annotation.SuppressLint
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,14 +26,17 @@ import java.net.URL
 import java.time.LocalDate
 import java.time.OffsetDateTime
 import java.util.Calendar
-import androidx.core.content.edit
+import androidx.lifecycle.lifecycleScope
+import com.example.f1info.NotificationReceiver
+import java.text.SimpleDateFormat
+import java.util.Locale
+import kotlin.jvm.java
 
 class CalendarFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CalendarAdapter
     private val raceList = mutableListOf<Race>()
-
     private val TEST_MODE = true
 
     @SuppressLint("NotifyDataSetChanged")
@@ -43,25 +49,26 @@ class CalendarFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         adapter = CalendarAdapter(raceList)
         recyclerView.adapter = adapter
-
         fetchCalendarData()
         scheduleSessionNotifications()
         adapter.notifyDataSetChanged()
-
         return view
     }
 
-    @SuppressLint("NotifyDataSetChanged", "ScheduleExactAlarm")
+    @SuppressLint("NotifyDataSetChanged", "ScheduleExactAlarm", "UseKtx")
     private fun fetchCalendarData() {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val prefs = requireContext().getSharedPreferences("F1_PREFS", Context.MODE_PRIVATE)
+            val selectedSeason = prefs.getString("selected_season", "2025") ?: "2025"
+
             try {
-                val prefs = requireContext().getSharedPreferences("F1_PREFS", Context.MODE_PRIVATE)
-                val selectedSeason = prefs.getString("selected_season", "2025") ?: "2025"
-                val response = URL("https://api.jolpi.ca/ergast/f1/$selectedSeason/races.json").readText()
-                val json = JSONObject(response)
-                val races = json.getJSONObject("MRData")
-                    .getJSONObject("RaceTable")
-                    .getJSONArray("Races")
+                val races = withContext(Dispatchers.IO) {
+                    val response = URL("https://api.jolpi.ca/ergast/f1/$selectedSeason/races.json").readText()
+                    val json = JSONObject(response)
+                    json.getJSONObject("MRData")
+                        .getJSONObject("RaceTable")
+                        .getJSONArray("Races")
+                }
 
                 raceList.clear()
 
@@ -72,14 +79,13 @@ class CalendarFragment : Fragment() {
                     val date = race.getString("date")
                     val circuitId = race.getJSONObject("Circuit").getString("circuitId")
 
-                    val raceObj = Race(sessionName, country, date, circuitId, -1)
-                    raceList.add(raceObj)
+                    raceList.add(Race(sessionName, country, date, circuitId, -1))
 
                     if (i == 0) {
                         val alarmKey = "alarm_set_for_${sessionName}_${date}"
                         if (!prefs.getBoolean(alarmKey, false)) {
                             try {
-                                val sdf = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+                                val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                                 val raceDate = sdf.parse(date)
                                 val notifyTime = Calendar.getInstance().apply {
                                     time = raceDate!!
@@ -89,27 +95,26 @@ class CalendarFragment : Fragment() {
                                     set(Calendar.SECOND, 0)
                                 }
 
-                                val intent = android.content.Intent(requireContext(), com.example.f1info.NotificationReceiver::class.java).apply {
+                                val intent = Intent(requireContext(), NotificationReceiver::class.java).apply {
                                     putExtra("race_name", sessionName)
                                 }
 
-                                val pendingIntent = android.app.PendingIntent.getBroadcast(
+                                val pendingIntent = PendingIntent.getBroadcast(
                                     requireContext(),
                                     0,
                                     intent,
-                                    android.app.PendingIntent.FLAG_IMMUTABLE or android.app.PendingIntent.FLAG_UPDATE_CURRENT
+                                    PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
                                 )
 
-                                val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as android.app.AlarmManager
+                                val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
                                 alarmManager.setExact(
-                                    android.app.AlarmManager.RTC_WAKEUP,
+                                    AlarmManager.RTC_WAKEUP,
                                     notifyTime.timeInMillis,
                                     pendingIntent
                                 )
 
-                                Log.d("CalendarDebug", "Ustawiono powiadomienie na ${notifyTime.time}")
-                                prefs.edit() { putBoolean(alarmKey, true) }
-
+                                prefs.edit().putBoolean(alarmKey, true).apply()
+                                Log.d("CalendarDebug", "✅ Powiadomienie ustawione na ${notifyTime.time}")
                             } catch (ex: Exception) {
                                 Log.e("CalendarDebug", "Błąd przy ustawianiu alarmu: ${ex.message}", ex)
                             }
@@ -117,15 +122,15 @@ class CalendarFragment : Fragment() {
                     }
                 }
 
-                withContext(Dispatchers.Main) {
-                    Log.d("CalendarDebug", "✅ Załadowano ${raceList.size} wyścigów")
-                    adapter.notifyDataSetChanged()
-                }
+                adapter.notifyDataSetChanged()
+                Log.d("CalendarDebug", "✅ Załadowano ${raceList.size} wyścigów")
+
             } catch (e: Exception) {
                 Log.e("CalendarDebug", "❌ Błąd ładowania kalendarza: ${e.message}", e)
             }
         }
     }
+
 
 
 
@@ -174,29 +179,29 @@ class CalendarFragment : Fragment() {
 
                         Log.d("SessionNotify", "✅ Ustawiam powiadomienie: $title na ${notifyTime.time}")
 
-                        val intent = android.content.Intent(context, com.example.f1info.NotificationReceiver::class.java).apply {
+                        val intent = Intent(context, NotificationReceiver::class.java).apply {
                             putExtra("race_name", title)
                         }
 
-                        val pendingIntent = android.app.PendingIntent.getBroadcast(
+                        val pendingIntent = PendingIntent.getBroadcast(
                             context,
                             session.getString("session_key").hashCode(),
                             intent,
-                            android.app.PendingIntent.FLAG_IMMUTABLE or android.app.PendingIntent.FLAG_UPDATE_CURRENT
+                            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
                         )
 
-                        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as android.app.AlarmManager
+                        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
                         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
                             if (alarmManager.canScheduleExactAlarms()) {
                                 alarmManager.setExact(
-                                    android.app.AlarmManager.RTC_WAKEUP,
+                                    AlarmManager.RTC_WAKEUP,
                                     notifyTime.timeInMillis,
                                     pendingIntent
                                 )
                             }
                         } else {
                             alarmManager.setExact(
-                                android.app.AlarmManager.RTC_WAKEUP,
+                                AlarmManager.RTC_WAKEUP,
                                 notifyTime.timeInMillis,
                                 pendingIntent
                             )
