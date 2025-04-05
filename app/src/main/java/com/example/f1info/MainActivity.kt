@@ -18,6 +18,8 @@ import com.example.f1info.fragments.TeamStandingsFragment
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.drawable.ColorDrawable
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageView
 
 @Suppress("DEPRECATION")
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         applyTeamTheme()
 
         supportFragmentManager.beginTransaction()
@@ -86,8 +89,8 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this, CalendarActivity::class.java))
                     true
                 }
-                R.id.nav_settings -> {
-                    startActivity(Intent(this, SettingsActivity::class.java))
+                R.id.nav_games -> {
+                    startActivity(Intent(this, GameActivity::class.java))
                     true
                 }
                 else -> false
@@ -160,4 +163,19 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         applyTeamTheme()
     }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.top_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }

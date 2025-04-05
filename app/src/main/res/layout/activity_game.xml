@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/background_primary">
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎮 Mini-Gierki F1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="32dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnReactionTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REACTION TEST 🚦"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_button"
+        android:elevation="4dp"
+        android:layout_marginTop="24dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnDrawTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RYSUJ TOR ✏️ "
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_button"
+        android:elevation="4dp"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧠 F1 QUIZ"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_button"
+        android:elevation="4dp"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+
+
+
+
+</LinearLayout>

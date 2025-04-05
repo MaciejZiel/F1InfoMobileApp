@@ -1,22 +1,29 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_race"
         android:title="Wyścig"
-        android:icon="@drawable/ic_race" />
+        android:icon="@drawable/ic_race"
+        tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_drivers"
         android:title="Kierowcy"
-        android:icon="@drawable/ic_driver" />
+        android:icon="@drawable/ic_driver"
+        tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_teams"
         android:title="Zespoły"
-        android:icon="@drawable/ic_team" />
+        android:icon="@drawable/ic_team"
+        tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_calendar"
         android:title="Kalendarz"
-        android:icon="@drawable/ic_calendar" />
+        android:icon="@drawable/ic_calendar"
+        tools:ignore="HardcodedText" />
     <item
-        android:id="@+id/nav_settings"
-        android:title="Ustawienia"
-        android:icon="@drawable/ic_settings" />
+        android:id="@+id/nav_games"
+        android:icon="@drawable/ic_games"
+        android:title="Gierki"
+        tools:ignore="HardcodedText" />
+
 </menu>

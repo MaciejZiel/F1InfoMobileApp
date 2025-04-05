@@ -19,15 +19,16 @@
     <color name="rb_violet">#5728FF</color>
     <color name="haas_gray">#B6BABD</color>
     <color name="nav_icon_color">#FFFFFF</color>
-<!--    <color name="card_background">#80000000</color>-->
     <color name="transparent_black">#80000000</color>
     <color name="text_primary">#000000</color>
     <color name="text_secondary">#555555</color>
     <color name="background_primary">#FFFFFF</color>
     <color name="card_background_dark">#2B2B2B</color>
-<!--    <color name="background_secondary">#E0E0E0</color>-->
     <color name="background_secondary">#F4F4F4</color>
     <color name="card_background">#FFFFFF</color>
     <color name="card_border">#DADADA</color>
     <color name="card_inner_background">#FFFFFF</color>
+    <color name="btn_accent">#1E88E5</color> <!-- niebieski -->
+    <color name="btn_accent_dark">#D32F2F</color> <!-- Czerwony, ale możesz zmienić na dowolny -->
+
 </resources>

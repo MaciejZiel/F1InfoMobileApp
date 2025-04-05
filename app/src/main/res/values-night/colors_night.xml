@@ -7,4 +7,6 @@
     <color name="card_background">#2B2B2B</color>
     <color name="card_inner_background">#3A3A3A</color>
     <color name="card_border">#444444</color>
+    <color name="btn_accent">#1565C0</color> <!-- głęboki niebieski -->
+
 </resources>

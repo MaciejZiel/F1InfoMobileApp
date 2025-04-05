@@ -26,6 +26,10 @@
         <activity android:name=".CalendarActivity" />
         <receiver android:name=".NotificationReceiver"/>
         <activity android:name=".DriverDetailsActivity" />
+        <activity android:name=".GameActivity" />
+        <activity android:name=".ReactionTestActivity" />
+        <activity android:name=".DrawTrackActivity" />
+        <activity android:name=".QuizActivity" />
 
 
 
