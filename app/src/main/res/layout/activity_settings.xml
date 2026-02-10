@@ -7,11 +7,11 @@
     android:padding="16dp"
     android:orientation="vertical">
 
-    <!-- Wybierz sezon -->
+    <!-- Select season -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sezon"
+        android:text="Season"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -25,11 +25,11 @@
         android:layout_height="48dp"
         android:spinnerMode="dropdown" />
 
-    <!-- Wybierz zespół -->
+    <!-- Select team theme -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Motyw aplikacji"
+        android:text="App theme"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -43,11 +43,11 @@
         android:layout_height="48dp"
         android:spinnerMode="dropdown" />
 
-    <!-- Wygląd -->
+    <!-- Appearance -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wygląd"
+        android:text="Appearance"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -68,7 +68,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Tryb ciemny"
+            android:text="Dark mode"
             android:textSize="15sp"
             android:textColor="?android:textColorPrimary"
             tools:ignore="HardcodedText" />

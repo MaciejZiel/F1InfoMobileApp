@@ -2,28 +2,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_race"
-        android:title="Wyścig"
+        android:title="Race"
         android:icon="@drawable/ic_race"
         tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_drivers"
-        android:title="Kierowcy"
+        android:title="Drivers"
         android:icon="@drawable/ic_driver"
         tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_teams"
-        android:title="Zespoły"
+        android:title="Teams"
         android:icon="@drawable/ic_team"
         tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_calendar"
-        android:title="Kalendarz"
+        android:title="Calendar"
         android:icon="@drawable/ic_calendar"
         tools:ignore="HardcodedText" />
     <item
         android:id="@+id/nav_games"
         android:icon="@drawable/ic_games"
-        android:title="Gierki"
+        android:title="Games"
         tools:ignore="HardcodedText" />
 
 </menu>

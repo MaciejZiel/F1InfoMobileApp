@@ -28,7 +28,7 @@
     <color name="card_background">#FFFFFF</color>
     <color name="card_border">#DADADA</color>
     <color name="card_inner_background">#FFFFFF</color>
-    <color name="btn_accent">#1E88E5</color> <!-- niebieski -->
-    <color name="btn_accent_dark">#D32F2F</color> <!-- Czerwony, ale możesz zmienić na dowolny -->
+    <color name="btn_accent">#1E88E5</color> <!-- blue -->
+    <color name="btn_accent_dark">#D32F2F</color> <!-- red, but you can change it -->
 
 </resources>

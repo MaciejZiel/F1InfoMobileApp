@@ -11,12 +11,11 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-
         <TextView
             android:id="@+id/tvNoData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brak danych klasyfikacji kierowców"
+            android:text="No driver standings data"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +41,6 @@
             android:visibility="visible"
             tools:listitem="@layout/item_driver_standing"
             tools:ignore="MissingConstraints" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

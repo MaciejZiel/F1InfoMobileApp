@@ -16,7 +16,7 @@
             android:id="@+id/tvNoData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brak danych z wyścigu"
+            android:text="No race data"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,10 +24,6 @@
             app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
             android:layout_marginTop="30dp"
             tools:ignore="HardcodedText,NotSibling" />
-
-
-
-
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -57,7 +53,7 @@
                     android:id="@+id/tvSessionName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nazwa sesji"
+                    android:text="Session name"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
@@ -67,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Nazwa toru"
+                    android:text="Track name"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText" />
 
@@ -76,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Data i czas"
+                    android:text="Date and time"
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
 
@@ -91,7 +87,7 @@
                     android:id="@+id/tvTopThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ładowanie wyników..."
+                    android:text="Loading results..."
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
 

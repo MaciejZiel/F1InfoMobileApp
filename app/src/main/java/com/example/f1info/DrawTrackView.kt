@@ -64,9 +64,7 @@ class DrawTrackView(context: Context, attrs: AttributeSet?) : View(context, attr
 
         val distance = Math.hypot(dx.toDouble(), dy.toDouble())
 
-        // Ostrzejszy limit, np. max 15 pikseli różnicy
+        // Tighter limit for detecting a closed track.
         return distance <= 1
     }
-
-
 }

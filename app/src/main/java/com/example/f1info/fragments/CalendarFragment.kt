@@ -51,7 +51,8 @@ class CalendarFragment : Fragment() {
 
             try {
                 suspend fun fetchRaces(targetSeason: Int) = withContext(Dispatchers.IO) {
-                    val response = URL("https://api.jolpi.ca/ergast/f1/$targetSeason/races.json").readText()
+                    val response =
+                        URL("https://api.jolpi.ca/ergast/f1/$targetSeason/races.json").readText()
                     val json = JSONObject(response)
                     json.getJSONObject("MRData")
                         .getJSONObject("RaceTable")
@@ -68,7 +69,7 @@ class CalendarFragment : Fragment() {
                         activeSeason = fallbackSeason
                         Toast.makeText(
                             requireContext(),
-                            "Brak danych dla $season, pokazuje $fallbackSeason",
+                            "No data for $season, showing $fallbackSeason",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -87,10 +88,10 @@ class CalendarFragment : Fragment() {
                 }
 
                 adapter.notifyDataSetChanged()
-                Log.d("CalendarDebug", "Załadowano ${raceList.size} wyścigów (sezon $activeSeason)")
+                Log.d("CalendarDebug", "Loaded ${raceList.size} races (season $activeSeason)")
 
             } catch (e: Exception) {
-                Log.e("CalendarDebug", "Błąd ładowania kalendarza: ${e.message}", e)
+                Log.e("CalendarDebug", "Calendar load error: ${e.message}", e)
             }
         }
     }

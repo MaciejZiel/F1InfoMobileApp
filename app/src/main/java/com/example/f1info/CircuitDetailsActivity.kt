@@ -42,9 +42,9 @@ class CircuitDetailsActivity : AppCompatActivity() {
 
         description?.let {
             tvCircuitInfoMain.text = it.main
-            tvCircuitInfoChar.text = it.charakterystyka
-            tvCircuitInfoChallenges.text = it.wyzwania
-            tvCircuitInfoTrivia.text = it.ciekawostka
+            tvCircuitInfoChar.text = it.characteristics
+            tvCircuitInfoChallenges.text = it.challenges
+            tvCircuitInfoTrivia.text = it.trivia
             tvCircuitInfoDrs.text = it.drs
         }
 

@@ -1,7 +1,13 @@
 package com.example.f1info
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -10,12 +16,6 @@ import com.example.f1info.databinding.ActivityMainBinding
 import com.example.f1info.fragments.DriverStandingsFragment
 import com.example.f1info.fragments.RaceInfoFragment
 import com.example.f1info.fragments.TeamStandingsFragment
-import android.animation.ArgbEvaluator
-import android.animation.ValueAnimator
-import android.graphics.drawable.ColorDrawable
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.ImageView
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
@@ -41,20 +41,20 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, RaceInfoFragment())
             .commit()
 
-        binding.toolbar.title = "Informacje o wyścigu"
+        binding.toolbar.title = "Race Info"
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_race -> {
-                    loadFragment(RaceInfoFragment(), "Informacje o wyścigu")
+                    loadFragment(RaceInfoFragment(), "Race Info")
                     true
                 }
                 R.id.nav_drivers -> {
-                    loadFragment(DriverStandingsFragment(), "Klasyfikacja kierowców")
+                    loadFragment(DriverStandingsFragment(), "Driver Standings")
                     true
                 }
                 R.id.nav_teams -> {
-                    loadFragment(TeamStandingsFragment(), "Klasyfikacja konstruktorów")
+                    loadFragment(TeamStandingsFragment(), "Team Standings")
                     true
                 }
                 R.id.nav_calendar -> {
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     fun applyTeamTheme() {
         val prefs = getSharedPreferences("F1_PREFS", MODE_PRIVATE)
-        val team = prefs.getString("favorite_team", "Brak") ?: "Brak"
+        val team = prefs.getString("favorite_team", "None") ?: "None"
 
         val logoRes = when (team) {
             "Red Bull" -> R.drawable.redbull_logo
@@ -125,14 +125,17 @@ class MainActivity : AppCompatActivity() {
         colorAnimation.start()
         window.statusBarColor = newColor
 
-        binding.bottomNavigationView.itemIconTintList = ContextCompat.getColorStateList(this, R.color.nav_icon_color)
-        binding.bottomNavigationView.itemTextColor = ContextCompat.getColorStateList(this, R.color.nav_icon_color)
+        binding.bottomNavigationView.itemIconTintList =
+            ContextCompat.getColorStateList(this, R.color.nav_icon_color)
+        binding.bottomNavigationView.itemTextColor =
+            ContextCompat.getColorStateList(this, R.color.nav_icon_color)
     }
 
     override fun onResume() {
         super.onResume()
         applyTeamTheme()
     }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.top_menu, menu)
         return true

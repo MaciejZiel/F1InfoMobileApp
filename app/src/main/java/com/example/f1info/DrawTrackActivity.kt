@@ -1,12 +1,12 @@
 package com.example.f1info
 
+import android.animation.ValueAnimator
 import android.os.Bundle
+import android.view.animation.LinearInterpolator
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.animation.ValueAnimator
-import android.view.animation.LinearInterpolator
-import android.widget.ImageView
 
 class DrawTrackActivity : AppCompatActivity() {
     private lateinit var drawView: DrawTrackView
@@ -27,7 +27,7 @@ class DrawTrackActivity : AppCompatActivity() {
 
         btnSimulate.setOnClickListener {
             if (drawView.trackPoints.size < 10 || !drawView.isTrackClosed()) {
-                Toast.makeText(this, "Tor musi być dłuższy i zamknięty!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "The track must be longer and closed!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             startSimulation()

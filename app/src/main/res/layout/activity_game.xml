@@ -11,7 +11,7 @@
         android:id="@+id/tvGameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🎮 Mini-Gierki F1"
+        android:text="F1 Mini-Games"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
@@ -22,7 +22,7 @@
         android:id="@+id/btnReactionTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REACTION TEST 🚦"
+        android:text="Reaction Test"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -35,7 +35,7 @@
         android:id="@+id/btnDrawTrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RYSUJ TOR ✏️ "
+        android:text="Draw Track"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -48,7 +48,7 @@
         android:id="@+id/btnQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🧠 F1 QUIZ"
+        android:text="F1 Quiz"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -56,9 +56,5 @@
         android:elevation="4dp"
         android:layout_marginTop="16dp"
         tools:ignore="HardcodedText" />
-
-
-
-
 
 </LinearLayout>

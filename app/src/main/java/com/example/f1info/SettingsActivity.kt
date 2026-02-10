@@ -7,8 +7,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.f1info.databinding.ActivitySettingsBinding
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.f1info.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -31,7 +31,7 @@ class SettingsActivity : AppCompatActivity() {
             )
         }
 
-        val savedTeam = prefs.getString("favorite_team", "Brak") ?: "Brak"
+        val savedTeam = prefs.getString("favorite_team", "None") ?: "None"
         val teams = listOf(
             "F1",
             "Red Bull",
@@ -56,7 +56,7 @@ class SettingsActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedTeam = parent?.getItemAtPosition(position).toString()
                 prefs.edit().putString("favorite_team", selectedTeam).apply()
-                Toast.makeText(this@SettingsActivity, "Ulubiony zespół: $selectedTeam", Toast.LENGTH_SHORT)
+                Toast.makeText(this@SettingsActivity, "Favorite team: $selectedTeam", Toast.LENGTH_SHORT)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -78,7 +78,7 @@ class SettingsActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedSeason = parent?.getItemAtPosition(position).toString()
                 prefs.edit().putString("selected_season", selectedSeason).apply()
-                Toast.makeText(this@SettingsActivity, "Zapisano sezon: $selectedSeason", Toast.LENGTH_SHORT)
+                Toast.makeText(this@SettingsActivity, "Saved season: $selectedSeason", Toast.LENGTH_SHORT)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}

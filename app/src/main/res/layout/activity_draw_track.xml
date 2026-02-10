@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
         android:layout_above="@+id/buttonLayout"
-        android:layout_alignParentBottom="false"/>
+        android:layout_alignParentBottom="false" />
 
     <LinearLayout
         android:id="@+id/buttonLayout"
@@ -27,17 +27,18 @@
             android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🧹 Wyczyść"
+            android:text="Clear"
             tools:ignore="ButtonStyle,HardcodedText" />
 
         <Button
             android:id="@+id/btnSimulate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🏎️ Start przejazdu"
+            android:text="Start simulation"
             android:layout_marginStart="16dp"
             tools:ignore="ButtonStyle,HardcodedText" />
     </LinearLayout>
+
     <ImageView
         android:id="@+id/carIcon"
         android:layout_width="32dp"

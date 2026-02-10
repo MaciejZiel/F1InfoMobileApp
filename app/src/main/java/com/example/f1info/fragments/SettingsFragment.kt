@@ -28,7 +28,7 @@ class SettingsFragment : Fragment() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedSeason = availableSeasons[position]
-                Toast.makeText(requireContext(), "Wybrany sezon: $selectedSeason", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Selected season: $selectedSeason", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}

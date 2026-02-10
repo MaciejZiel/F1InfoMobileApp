@@ -18,17 +18,17 @@ class QuizActivity : AppCompatActivity() {
 
     private val questions = listOf(
         QuizQuestion(
-            "Który kierowca zdobył najwięcej tytułów mistrza świata?",
+            "Which driver has won the most world titles?",
             listOf("Sebastian Vettel", "Michael Schumacher", "Lewis Hamilton"),
             2
         ),
         QuizQuestion(
-            "Który zespół ma najwięcej tytułów konstruktorów?",
+            "Which team has won the most constructors' titles?",
             listOf("Mercedes", "Ferrari", "McLaren"),
             1
         ),
         QuizQuestion(
-            "Ile Grand Prix liczy sezon 2024?",
+            "How many Grands Prix are in the 2024 season?",
             listOf("20", "22", "24"),
             2
         )
@@ -96,7 +96,7 @@ class QuizActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun showFinalResult() {
-        tvQuizResult.text = "Twój wynik: $score/${questions.size}"
+        tvQuizResult.text = "Your score: $score/${questions.size}"
         tvQuizResult.visibility = TextView.VISIBLE
         btnRetryQuiz.visibility = Button.VISIBLE
     }

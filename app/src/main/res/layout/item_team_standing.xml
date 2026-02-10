@@ -40,7 +40,7 @@
                 android:id="@+id/tvTeamName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nazwa Zespołu"
+                android:text="Team Name"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"

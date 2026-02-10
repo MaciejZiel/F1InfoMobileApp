@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Wybierz sezon"
+        android:text="Select season"
         android:textStyle="bold"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"

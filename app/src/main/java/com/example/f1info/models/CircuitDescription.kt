@@ -4,8 +4,8 @@ import java.io.Serializable
 
 data class CircuitDescription(
     val main: String,
-    val charakterystyka: String,
-    val wyzwania: String,
-    val ciekawostka: String,
+    val characteristics: String,
+    val challenges: String,
+    val trivia: String,
     val drs: String
 ) : Serializable

@@ -57,7 +57,7 @@ class RaceInfoFragment : Fragment() {
             } catch (e: Exception) {
                 if (e.message != "Job was cancelled") {
                     context?.let {
-                        Toast.makeText(it, "Błąd: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(it, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
             } finally {
@@ -91,13 +91,15 @@ class RaceInfoFragment : Fragment() {
                 results.sortedBy { it.position }.take(3).forEach { result ->
                     val driver = driversByNumber[result.driver_number]
                     val name = driver?.full_name
-                        ?: listOfNotNull(driver?.first_name, driver?.last_name).joinToString(" ").ifBlank { "Driver" }
+                        ?: listOfNotNull(driver?.first_name, driver?.last_name)
+                            .joinToString(" ")
+                            .ifBlank { "Driver" }
                     val team = driver?.team_name ?: "Unknown"
                     append("${result.position}. $name ($team)\n")
                 }
             }
         } else {
-            "Wyniki jeszcze niedostępne"
+            "Results not available yet"
         }
 
         val displayDate = formatOpenF1Date(session.date_start)
@@ -125,7 +127,7 @@ class RaceInfoFragment : Fragment() {
                 }
             }
         } else {
-            "Wyniki jeszcze niedostępne"
+            "Results not available yet"
         }
 
         val displayDate = formatErgastDate(race.date, race.time)
@@ -151,7 +153,8 @@ class RaceInfoFragment : Fragment() {
     private fun formatOpenF1Date(dateStart: String): String {
         return try {
             val dateTime = OffsetDateTime.parse(dateStart).atZoneSameInstant(ZoneId.systemDefault())
-            val formatter = java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm", Locale.getDefault())
+            val formatter =
+                java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm", Locale.getDefault())
             dateTime.format(formatter)
         } catch (_: Exception) {
             dateStart

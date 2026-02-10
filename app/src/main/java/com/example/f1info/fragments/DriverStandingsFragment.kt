@@ -104,8 +104,8 @@ class DriverStandingsFragment : Fragment() {
                 }
 
             } catch (e: Exception) {
-                Log.e("DriverStandingsFragment", "Błąd podczas ładowania danych", e)
-                Toast.makeText(requireContext(), "Błąd: ${e.message}", Toast.LENGTH_SHORT).show()
+                Log.e("DriverStandingsFragment", "Error loading driver standings", e)
+                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                 _binding?.tvNoData?.visibility = View.VISIBLE
             } finally {
                 _binding?.progressBar?.visibility = View.GONE
