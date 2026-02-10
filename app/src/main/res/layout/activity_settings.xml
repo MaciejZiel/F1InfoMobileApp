@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Season"
+        android:text="@string/settings_season_label"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -25,11 +25,29 @@
         android:layout_height="48dp"
         android:spinnerMode="dropdown" />
 
+    <!-- Language -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_language_label"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="4dp"
+        tools:ignore="HardcodedText" />
+
+    <Spinner
+        android:id="@+id/languageSelector"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:spinnerMode="dropdown" />
+
     <!-- Select team theme -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="App theme"
+        android:text="@string/settings_theme_label"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -47,7 +65,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Appearance"
+        android:text="@string/settings_appearance_label"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?android:textColorPrimary"
@@ -68,7 +86,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Dark mode"
+            android:text="@string/settings_dark_mode_label"
             android:textSize="15sp"
             android:textColor="?android:textColorPrimary"
             tools:ignore="HardcodedText" />

@@ -1,6 +1,7 @@
 package com.example.f1info.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -61,7 +62,7 @@ class CalendarAdapter(private val races: List<Race>) :
         }
     }
 
-    private fun getCircuitDescription(circuitId: String): CircuitDescription {
+    private fun getCircuitDescription(context: Context, circuitId: String): CircuitDescription {
         return when (circuitId.lowercase()) {
             "albert_park" -> CircuitDescription(
                 main = "Melbourne Grand Prix Circuit (Albert Park) is a temporary street circuit, 5.303 km with 14 turns.",
@@ -337,7 +338,7 @@ class CalendarAdapter(private val races: List<Race>) :
                 drs = "Two zones - main straight and before Turn 1."
             )
             else -> CircuitDescription(
-                main = "No description available for this circuit.",
+                main = context.getString(R.string.circuit_no_description),
                 characteristics = "-",
                 challenges = "-",
                 trivia = "-",
@@ -360,7 +361,10 @@ class CalendarAdapter(private val races: List<Race>) :
                 putExtra("circuit_name", race.sessionName)
                 putExtra("country", race.country)
                 putExtra("race_date", race.date)
-                putExtra("description", getCircuitDescription(race.circuitId) as java.io.Serializable)
+                putExtra(
+                    "description",
+                    getCircuitDescription(context, race.circuitId) as java.io.Serializable
+                )
                 putExtra("meeting_key", race.meetingKey)
                 putExtra("circuit_id", race.circuitId)
             }

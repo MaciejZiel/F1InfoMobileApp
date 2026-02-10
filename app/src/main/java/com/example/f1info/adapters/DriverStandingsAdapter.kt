@@ -42,7 +42,8 @@ class DriverStandingsAdapter :
 
         holder.binding.tvDriverName.text = "${driver.name} ${driver.surname}"
         holder.binding.tvTeamName.text = driver.team
-        holder.binding.tvPoints.text = "${formatPoints(driver.points)} pts"
+        val pointsSuffix = holder.itemView.context.getString(R.string.points_abbrev)
+        holder.binding.tvPoints.text = "${formatPoints(driver.points)} $pointsSuffix"
 
         val teamLogos = mapOf(
             "RED BULL RACING" to R.drawable.redbull_logo_standing,

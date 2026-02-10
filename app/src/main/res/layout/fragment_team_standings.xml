@@ -16,7 +16,7 @@
             android:id="@+id/tvNoData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No constructor standings data"
+            android:text="@string/no_constructor_standings_data"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

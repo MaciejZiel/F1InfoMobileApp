@@ -27,7 +27,7 @@ class DrawTrackActivity : AppCompatActivity() {
 
         btnSimulate.setOnClickListener {
             if (drawView.trackPoints.size < 10 || !drawView.isTrackClosed()) {
-                Toast.makeText(this, "The track must be longer and closed!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.draw_track_invalid), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             startSimulation()

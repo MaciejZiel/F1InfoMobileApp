@@ -16,23 +16,7 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var tvQuizResult: TextView
     private lateinit var btnRetryQuiz: Button
 
-    private val questions = listOf(
-        QuizQuestion(
-            "Which driver has won the most world titles?",
-            listOf("Sebastian Vettel", "Michael Schumacher", "Lewis Hamilton"),
-            2
-        ),
-        QuizQuestion(
-            "Which team has won the most constructors' titles?",
-            listOf("Mercedes", "Ferrari", "McLaren"),
-            1
-        ),
-        QuizQuestion(
-            "How many Grands Prix are in the 2024 season?",
-            listOf("20", "22", "24"),
-            2
-        )
-    )
+    private lateinit var questions: List<QuizQuestion>
 
     private var currentQuestionIndex = 0
     private var score = 0
@@ -48,6 +32,35 @@ class QuizActivity : AppCompatActivity() {
         btnAnswer3 = findViewById(R.id.btnAnswer3)
         tvQuizResult = findViewById(R.id.tvQuizResult)
         btnRetryQuiz = findViewById(R.id.btnRetryQuiz)
+        questions = listOf(
+            QuizQuestion(
+                getString(R.string.quiz_q1),
+                listOf(
+                    getString(R.string.quiz_q1_a1),
+                    getString(R.string.quiz_q1_a2),
+                    getString(R.string.quiz_q1_a3)
+                ),
+                2
+            ),
+            QuizQuestion(
+                getString(R.string.quiz_q2),
+                listOf(
+                    getString(R.string.quiz_q2_a1),
+                    getString(R.string.quiz_q2_a2),
+                    getString(R.string.quiz_q2_a3)
+                ),
+                1
+            ),
+            QuizQuestion(
+                getString(R.string.quiz_q3),
+                listOf(
+                    getString(R.string.quiz_q3_a1),
+                    getString(R.string.quiz_q3_a2),
+                    getString(R.string.quiz_q3_a3)
+                ),
+                2
+            )
+        )
         loadQuestion()
         val answerButtons = listOf(btnAnswer1, btnAnswer2, btnAnswer3)
         answerButtons.forEachIndexed { index, button ->
@@ -96,7 +109,7 @@ class QuizActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun showFinalResult() {
-        tvQuizResult.text = "Your score: $score/${questions.size}"
+        tvQuizResult.text = getString(R.string.quiz_score_format, score, questions.size)
         tvQuizResult.visibility = TextView.VISIBLE
         btnRetryQuiz.visibility = Button.VISIBLE
     }

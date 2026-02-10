@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Circuit overview"
+                            android:text="@string/circuit_overview_label"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_secondary"
@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Characteristics"
+                            android:text="@string/circuit_characteristics_label"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_secondary"
@@ -136,7 +136,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Challenges"
+                            android:text="@string/circuit_challenges_label"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_secondary"
@@ -163,7 +163,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Trivia"
+                            android:text="@string/circuit_trivia_label"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_secondary"
@@ -190,7 +190,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="DRS"
+                            android:text="@string/circuit_drs_label"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_secondary"
@@ -251,7 +251,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:text="First Grand Prix"
+                                    android:text="@string/circuit_first_gp_label"
                                     android:textSize="14sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/text_secondary"
@@ -284,7 +284,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:text="Number of Laps"
+                                    android:text="@string/circuit_laps_label"
                                     android:textSize="14sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/text_secondary"
@@ -324,7 +324,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:text="Circuit Length"
+                                    android:text="@string/circuit_length_label"
                                     android:textSize="14sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/text_secondary"
@@ -357,7 +357,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:text="Race Distance"
+                                    android:text="@string/circuit_race_distance_label"
                                     android:textSize="14sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/text_secondary"
@@ -390,7 +390,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="Lap Record"
+                                android:text="@string/circuit_lap_record_label"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/text_secondary"

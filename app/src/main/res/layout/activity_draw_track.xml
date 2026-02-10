@@ -27,16 +27,16 @@
             android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"
-            tools:ignore="ButtonStyle,HardcodedText" />
+            android:text="@string/draw_clear"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/btnSimulate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start simulation"
+            android:text="@string/draw_start_simulation"
             android:layout_marginStart="16dp"
-            tools:ignore="ButtonStyle,HardcodedText" />
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
     <ImageView

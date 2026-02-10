@@ -31,22 +31,29 @@ class DriverDetailsActivity : AppCompatActivity() {
         val championshipPosition = intent.getIntExtra("championship_position", 0)
 
         val pointsText = if (points % 1.0 == 0.0) points.toInt().toString() else points.toString()
-        findViewById<TextView>(R.id.tvDriverName).text = "$name\n$team - $pointsText pts"
+        val safeName = name ?: getString(R.string.label_unknown)
+        val safeTeam = team ?: getString(R.string.label_unknown)
+        val pointsSuffix = getString(R.string.points_abbrev)
+        findViewById<TextView>(R.id.tvDriverName).text =
+            getString(R.string.driver_header_format, safeName, safeTeam, pointsText, pointsSuffix)
         val imageView = findViewById<ImageView>(R.id.ivDriverImage)
         Glide.with(this).load(imageUrl).into(imageView)
 
         val cardPodiums = findViewById<View>(R.id.cardPodiums)
-        cardPodiums.findViewById<TextView>(R.id.tvStatTitle).text = "Season Podiums"
+        cardPodiums.findViewById<TextView>(R.id.tvStatTitle).text =
+            getString(R.string.driver_stat_season_podiums)
         val tvPodiumsValue = cardPodiums.findViewById<TextView>(R.id.tvStatValue)
         tvPodiumsValue.text = "-"
 
         val cardChampionship = findViewById<View>(R.id.cardChampionship)
-        cardChampionship.findViewById<TextView>(R.id.tvStatTitle).text = "Championship Standing"
+        cardChampionship.findViewById<TextView>(R.id.tvStatTitle).text =
+            getString(R.string.driver_stat_championship_standing)
         val champValue = if (championshipPosition > 0) championshipPosition.toString() else "-"
         cardChampionship.findViewById<TextView>(R.id.tvStatValue).text = champValue
 
         val cardPoints = findViewById<View>(R.id.cardPoints)
-        cardPoints.findViewById<TextView>(R.id.tvStatTitle).text = "Points"
+        cardPoints.findViewById<TextView>(R.id.tvStatTitle).text =
+            getString(R.string.driver_stat_points)
         cardPoints.findViewById<TextView>(R.id.tvStatValue).text = pointsText
 
         val season = getSelectedSeason()

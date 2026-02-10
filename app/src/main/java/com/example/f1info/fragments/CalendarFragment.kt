@@ -69,7 +69,7 @@ class CalendarFragment : Fragment() {
                         activeSeason = fallbackSeason
                         Toast.makeText(
                             requireContext(),
-                            "No data for $season, showing $fallbackSeason",
+                            getString(R.string.no_calendar_data_fallback, season, fallbackSeason),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -88,10 +88,17 @@ class CalendarFragment : Fragment() {
                 }
 
                 adapter.notifyDataSetChanged()
-                Log.d("CalendarDebug", "Loaded ${raceList.size} races (season $activeSeason)")
+                Log.d(
+                    "CalendarDebug",
+                    getString(R.string.calendar_loaded_log, raceList.size, activeSeason)
+                )
 
             } catch (e: Exception) {
-                Log.e("CalendarDebug", "Calendar load error: ${e.message}", e)
+                Log.e(
+                    "CalendarDebug",
+                    getString(R.string.calendar_load_error, e.message ?: ""),
+                    e
+                )
             }
         }
     }

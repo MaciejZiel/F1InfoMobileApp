@@ -41,20 +41,20 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, RaceInfoFragment())
             .commit()
 
-        binding.toolbar.title = "Race Info"
+        binding.toolbar.title = getString(R.string.title_race_info)
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_race -> {
-                    loadFragment(RaceInfoFragment(), "Race Info")
+                    loadFragment(RaceInfoFragment(), getString(R.string.title_race_info))
                     true
                 }
                 R.id.nav_drivers -> {
-                    loadFragment(DriverStandingsFragment(), "Driver Standings")
+                    loadFragment(DriverStandingsFragment(), getString(R.string.title_driver_standings))
                     true
                 }
                 R.id.nav_teams -> {
-                    loadFragment(TeamStandingsFragment(), "Team Standings")
+                    loadFragment(TeamStandingsFragment(), getString(R.string.title_team_standings))
                     true
                 }
                 R.id.nav_calendar -> {

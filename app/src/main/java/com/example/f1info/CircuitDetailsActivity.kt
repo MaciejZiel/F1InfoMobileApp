@@ -30,7 +30,7 @@ class CircuitDetailsActivity : AppCompatActivity() {
         val tvFirstGrandPrix = findViewById<TextView>(R.id.tvFirstGrandPrix)
         val tvLapCount = findViewById<TextView>(R.id.tvLapCount)
 
-        val circuitName = intent.getStringExtra("circuit_name") ?: "Unknown"
+        val circuitName = intent.getStringExtra("circuit_name") ?: getString(R.string.label_unknown)
         val raceDate = intent.getStringExtra("race_date") ?: "-"
         val country = intent.getStringExtra("country") ?: "-"
         val description = intent.getSerializableExtra("description") as? CircuitDescription

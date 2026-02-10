@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.example.f1info.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
@@ -56,7 +57,11 @@ class SettingsActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedTeam = parent?.getItemAtPosition(position).toString()
                 prefs.edit().putString("favorite_team", selectedTeam).apply()
-                Toast.makeText(this@SettingsActivity, "Favorite team: $selectedTeam", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    this@SettingsActivity,
+                    getString(R.string.favorite_team_toast, selectedTeam),
+                    Toast.LENGTH_SHORT
+                )
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -78,7 +83,38 @@ class SettingsActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedSeason = parent?.getItemAtPosition(position).toString()
                 prefs.edit().putString("selected_season", selectedSeason).apply()
-                Toast.makeText(this@SettingsActivity, "Saved season: $selectedSeason", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    this@SettingsActivity,
+                    getString(R.string.saved_season_toast, selectedSeason),
+                    Toast.LENGTH_SHORT
+                )
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
+        val languageTags = listOf("en", "pl", "es")
+        val languageLabels = listOf(
+            getString(R.string.language_english),
+            getString(R.string.language_polish),
+            getString(R.string.language_spanish)
+        )
+        val languageAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, languageLabels)
+        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.languageSelector.adapter = languageAdapter
+
+        val savedLanguage = prefs.getString("app_language", "en") ?: "en"
+        val languageIndex = languageTags.indexOf(savedLanguage).takeIf { it >= 0 } ?: 0
+        binding.languageSelector.setSelection(languageIndex)
+
+        binding.languageSelector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedTag = languageTags[position]
+                if (selectedTag != savedLanguage) {
+                    prefs.edit().putString("app_language", selectedTag).apply()
+                    AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(selectedTag))
+                    recreate()
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}

@@ -41,15 +41,15 @@ class ReactionTestActivity : AppCompatActivity() {
 
             if (canClick) {
                 val reactionTime = (System.nanoTime() - startTime) / 1_000_000 // ms
-                tvStatus.text = "Your time: $reactionTime ms"
+                tvStatus.text = getString(R.string.reaction_time_format, reactionTime)
                 tvResult.text = ""
                 rootLayout.setBackgroundColor(Color.DKGRAY)
                 canClick = false
                 testFinished = true
                 btnRetry.visibility = View.VISIBLE
             } else {
-                tvStatus.text = "FALSE START"
-                tvResult.text = "Clicked before the signal"
+                tvStatus.text = getString(R.string.reaction_false_start)
+                tvResult.text = getString(R.string.reaction_clicked_early)
                 tvResult.setTextColor(Color.WHITE)
                 rootLayout.setBackgroundColor(Color.DKGRAY)
                 canClick = false
@@ -66,7 +66,7 @@ class ReactionTestActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun startTest() {
-        tvStatus.text = "Get ready..."
+        tvStatus.text = getString(R.string.reaction_get_ready)
         tvResult.text = ""
         tvResult.setTextColor(Color.WHITE)
         rootLayout.setBackgroundColor(Color.RED)
@@ -77,7 +77,7 @@ class ReactionTestActivity : AppCompatActivity() {
         val delayMillis = Random.nextLong(3000, 7000)
 
         handler.postDelayed({
-            tvStatus.text = "TAP!"
+            tvStatus.text = getString(R.string.reaction_tap)
             rootLayout.setBackgroundColor(Color.GREEN)
             startTime = System.nanoTime()
             canClick = true

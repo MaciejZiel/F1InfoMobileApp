@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RaceVision</string>
+
+    <!-- Navigation -->
+    <string name="nav_race">Wyścig</string>
+    <string name="nav_drivers">Kierowcy</string>
+    <string name="nav_teams">Zespoły</string>
+    <string name="nav_calendar">Kalendarz</string>
+    <string name="nav_games">Gry</string>
+    <string name="menu_settings">Ustawienia</string>
+
+    <!-- Titles -->
+    <string name="title_race_info">Informacje o wyścigu</string>
+    <string name="title_driver_standings">Klasyfikacja kierowców</string>
+    <string name="title_team_standings">Klasyfikacja konstruktorów</string>
+
+    <!-- Race info -->
+    <string name="no_race_data">Brak danych z wyścigu</string>
+    <string name="session_name_label">Nazwa sesji</string>
+    <string name="track_name_label">Nazwa toru</string>
+    <string name="date_time_label">Data i czas</string>
+    <string name="loading_results">Ładowanie wyników...</string>
+    <string name="results_not_available">Wyniki jeszcze niedostępne</string>
+    <string name="top_three_header">TOP 3:</string>
+
+    <!-- Standings -->
+    <string name="no_driver_standings_data">Brak danych klasyfikacji kierowców</string>
+    <string name="no_constructor_standings_data">Brak danych klasyfikacji konstruktorów</string>
+    <string name="error_loading_driver_standings">Błąd podczas ładowania danych</string>
+    <string name="error_prefix">Błąd: %1$s</string>
+
+    <!-- Calendar -->
+    <string name="no_calendar_data_fallback">Brak danych dla %1$d, pokazuję %2$d</string>
+    <string name="calendar_load_error">Błąd ładowania kalendarza: %1$s</string>
+    <string name="calendar_loaded_log">Załadowano %1$d wyścigów (sezon %2$d)</string>
+
+    <!-- Settings -->
+    <string name="settings_season_label">Sezon</string>
+    <string name="settings_theme_label">Motyw aplikacji</string>
+    <string name="settings_appearance_label">Wygląd</string>
+    <string name="settings_dark_mode_label">Tryb ciemny</string>
+    <string name="settings_language_label">Język</string>
+    <string name="favorite_team_toast">Ulubiony zespół: %1$s</string>
+    <string name="saved_season_toast">Zapisano sezon: %1$s</string>
+    <string name="selected_season_toast">Wybrany sezon: %1$s</string>
+    <string name="language_english">Angielski</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_spanish">Hiszpański</string>
+
+    <!-- Games -->
+    <string name="game_title">Mini-gry F1</string>
+    <string name="game_reaction_test">Test reakcji</string>
+    <string name="game_draw_track">Rysuj tor</string>
+    <string name="game_quiz">Quiz F1</string>
+
+    <!-- Draw track -->
+    <string name="draw_clear">Wyczyść</string>
+    <string name="draw_start_simulation">Start przejazdu</string>
+    <string name="draw_track_invalid">Tor musi być dłuższy i zamknięty!</string>
+
+    <!-- Reaction test -->
+    <string name="reaction_get_ready">Przygotuj się...</string>
+    <string name="reaction_try_again">Spróbuj ponownie</string>
+    <string name="reaction_false_start">FALSTART</string>
+    <string name="reaction_clicked_early">Kliknięcie przed sygnałem</string>
+    <string name="reaction_tap">KLIKNIJ!</string>
+    <string name="reaction_time_format">Twój czas: %1$d ms</string>
+
+    <!-- Quiz -->
+    <string name="quiz_question_placeholder">Tutaj będzie pytanie</string>
+    <string name="quiz_answer_1">Odpowiedź 1</string>
+    <string name="quiz_answer_2">Odpowiedź 2</string>
+    <string name="quiz_answer_3">Odpowiedź 3</string>
+    <string name="quiz_score_placeholder">Twój wynik: 0/0</string>
+    <string name="quiz_try_again">Spróbuj ponownie</string>
+    <string name="quiz_score_format">Twój wynik: %1$d/%2$d</string>
+    <string name="quiz_q1">Który kierowca zdobył najwięcej tytułów mistrza świata?</string>
+    <string name="quiz_q1_a1">Sebastian Vettel</string>
+    <string name="quiz_q1_a2">Michael Schumacher</string>
+    <string name="quiz_q1_a3">Lewis Hamilton</string>
+    <string name="quiz_q2">Który zespół ma najwięcej tytułów konstruktorów?</string>
+    <string name="quiz_q2_a1">Mercedes</string>
+    <string name="quiz_q2_a2">Ferrari</string>
+    <string name="quiz_q2_a3">McLaren</string>
+    <string name="quiz_q3">Ile Grand Prix liczy sezon 2024?</string>
+    <string name="quiz_q3_a1">20</string>
+    <string name="quiz_q3_a2">22</string>
+    <string name="quiz_q3_a3">24</string>
+
+    <!-- Circuit details -->
+    <string name="circuit_overview_label">Opis toru</string>
+    <string name="circuit_characteristics_label">Charakterystyka</string>
+    <string name="circuit_challenges_label">Wyzwania</string>
+    <string name="circuit_trivia_label">Ciekawostka</string>
+    <string name="circuit_drs_label">DRS</string>
+    <string name="circuit_first_gp_label">Pierwsze Grand Prix</string>
+    <string name="circuit_laps_label">Liczba okrążeń</string>
+    <string name="circuit_length_label">Długość toru</string>
+    <string name="circuit_race_distance_label">Dystans wyścigu</string>
+    <string name="circuit_lap_record_label">Rekord okrążenia</string>
+    <string name="circuit_no_description">Brak opisu tego toru.</string>
+
+    <!-- Driver details -->
+    <string name="driver_header_format">%1$s\n%2$s - %3$s %4$s</string>
+    <string name="points_abbrev">pkt</string>
+    <string name="driver_stat_season_podiums">Podia w sezonie</string>
+    <string name="driver_stat_championship_standing">Pozycja w mistrzostwach</string>
+    <string name="driver_stat_points">Punkty</string>
+
+    <!-- Labels -->
+    <string name="label_unknown">Nieznany</string>
+    <string name="label_driver">Kierowca</string>
+</resources>

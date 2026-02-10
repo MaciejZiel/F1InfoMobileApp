@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.f1info.R
 import com.example.f1info.api.JolpicaApiService
 import com.example.f1info.api.JolpicaClient
 import com.example.f1info.api.OpenF1ApiService
@@ -57,7 +58,11 @@ class RaceInfoFragment : Fragment() {
             } catch (e: Exception) {
                 if (e.message != "Job was cancelled") {
                     context?.let {
-                        Toast.makeText(it, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            it,
+                            getString(R.string.error_prefix, e.message ?: ""),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             } finally {
@@ -87,19 +92,20 @@ class RaceInfoFragment : Fragment() {
         val driversByNumber = drivers.associateBy { it.driver_number }
         val topThreeText = if (results.isNotEmpty()) {
             buildString {
-                append("TOP 3:\n")
+                append(getString(R.string.top_three_header))
+                append("\n")
                 results.sortedBy { it.position }.take(3).forEach { result ->
                     val driver = driversByNumber[result.driver_number]
                     val name = driver?.full_name
                         ?: listOfNotNull(driver?.first_name, driver?.last_name)
                             .joinToString(" ")
-                            .ifBlank { "Driver" }
-                    val team = driver?.team_name ?: "Unknown"
+                            .ifBlank { getString(R.string.label_driver) }
+                    val team = driver?.team_name ?: getString(R.string.label_unknown)
                     append("${result.position}. $name ($team)\n")
                 }
             }
         } else {
-            "Results not available yet"
+            getString(R.string.results_not_available)
         }
 
         val displayDate = formatOpenF1Date(session.date_start)
@@ -119,7 +125,8 @@ class RaceInfoFragment : Fragment() {
 
         val topThreeText = if (race.Results.isNotEmpty()) {
             buildString {
-                append("TOP 3:\n")
+                append(getString(R.string.top_three_header))
+                append("\n")
                 race.Results.sortedBy { it.position.toIntOrNull() ?: 0 }.take(3).forEach { result ->
                     val name = "${result.Driver.givenName} ${result.Driver.familyName}"
                     val team = result.Constructor.name
@@ -127,7 +134,7 @@ class RaceInfoFragment : Fragment() {
                 }
             }
         } else {
-            "Results not available yet"
+            getString(R.string.results_not_available)
         }
 
         val displayDate = formatErgastDate(race.date, race.time)

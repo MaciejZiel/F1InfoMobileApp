@@ -89,10 +89,11 @@ class DriverStandingsFragment : Fragment() {
                     bindingRef.tvNoData.visibility = View.GONE
                 }
 
+                val unknownLabel = getString(R.string.label_unknown)
                 val standings = if (season >= 2023) {
-                    loadOpenF1DriverStandings(season)
+                    loadOpenF1DriverStandings(season, unknownLabel)
                 } else {
-                    loadErgastDriverStandings(season, prefs, gson)
+                    loadErgastDriverStandings(season, prefs, gson, unknownLabel)
                 }
 
                 if (standings.isNotEmpty()) {
@@ -104,8 +105,12 @@ class DriverStandingsFragment : Fragment() {
                 }
 
             } catch (e: Exception) {
-                Log.e("DriverStandingsFragment", "Error loading driver standings", e)
-                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Log.e("DriverStandingsFragment", getString(R.string.error_loading_driver_standings), e)
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.error_prefix, e.message ?: ""),
+                    Toast.LENGTH_SHORT
+                ).show()
                 _binding?.tvNoData?.visibility = View.VISIBLE
             } finally {
                 _binding?.progressBar?.visibility = View.GONE
@@ -120,7 +125,10 @@ class DriverStandingsFragment : Fragment() {
         return selected.toIntOrNull() ?: 2026
     }
 
-    private suspend fun loadOpenF1DriverStandings(season: Int): List<DriverStanding> {
+    private suspend fun loadOpenF1DriverStandings(
+        season: Int,
+        unknownLabel: String
+    ): List<DriverStanding> {
         val session = OpenF1Repository.getLatestRaceSession(openF1Api, season) ?: return emptyList()
         val sessionKey = session.session_key
 
@@ -132,12 +140,12 @@ class DriverStandingsFragment : Fragment() {
         return standings
             .mapNotNull { entry ->
                 val info = driversByNumber[entry.driver_number] ?: return@mapNotNull null
-                val firstName = info.first_name ?: info.full_name?.substringBefore(" ") ?: "Unknown"
+                val firstName = info.first_name ?: info.full_name?.substringBefore(" ") ?: unknownLabel
                 val lastName = info.last_name ?: info.full_name?.substringAfter(" ", "") ?: ""
                 DriverStanding(
                     name = firstName,
                     surname = lastName,
-                    team = info.team_name ?: "Unknown",
+                    team = info.team_name ?: unknownLabel,
                     position = entry.position_current,
                     points = entry.points_current ?: 0.0,
                     picture_url = info.headshot_url ?: "",
@@ -150,7 +158,8 @@ class DriverStandingsFragment : Fragment() {
     private suspend fun loadErgastDriverStandings(
         season: Int,
         prefs: android.content.SharedPreferences,
-        gson: Gson
+        gson: Gson,
+        unknownLabel: String
     ): List<DriverStanding> = withContext(Dispatchers.IO) {
         val response = jolpicaApi.getDriverStandings(season.toString())
         val standingsList = response.MRData.StandingsTable.StandingsLists
@@ -167,7 +176,7 @@ class DriverStandingsFragment : Fragment() {
 
         for (standing in standingsList) {
             val driver = standing.Driver
-            val constructorName = standing.Constructors.firstOrNull()?.name ?: "Unknown"
+            val constructorName = standing.Constructors.firstOrNull()?.name ?: unknownLabel
             val points = standing.points.toDoubleOrNull() ?: 0.0
             val position = standing.position.toIntOrNull() ?: 0
 

@@ -16,7 +16,7 @@
             android:id="@+id/tvNoData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No race data"
+            android:text="@string/no_race_data"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
                     android:id="@+id/tvSessionName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Session name"
+                    android:text="@string/session_name_label"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
@@ -63,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Track name"
+                    android:text="@string/track_name_label"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText" />
 
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Date and time"
+                    android:text="@string/date_time_label"
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
 
@@ -87,7 +87,7 @@
                     android:id="@+id/tvTopThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Loading results..."
+                    android:text="@string/loading_results"
                     android:textSize="16sp"
                     tools:ignore="HardcodedText" />
 

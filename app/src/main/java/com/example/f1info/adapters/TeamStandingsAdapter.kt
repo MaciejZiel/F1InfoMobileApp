@@ -29,7 +29,8 @@ class TeamStandingsAdapter : ListAdapter<ConstructorStanding, TeamStandingsAdapt
         val constructor = getItem(position)
         holder.binding.tvPosition.text = constructor.position.toString()
         holder.binding.tvTeamName.text = constructor.constructor_name
-        holder.binding.tvPoints.text = "${formatPoints(constructor.points)} pts"
+        val pointsSuffix = holder.itemView.context.getString(R.string.points_abbrev)
+        holder.binding.tvPoints.text = "${formatPoints(constructor.points)} $pointsSuffix"
 
         val teamColors = mapOf(
             "RED BULL RACING" to ContextCompat.getColor(holder.binding.tvPosition.context, R.color.redbull_blue),
