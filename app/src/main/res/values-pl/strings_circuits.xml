@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="circuit_albert_park_main">Melbourne Grand Prix Circuit (Albert Park) to tymczasowy tor uliczny, 5.303 km i 14 zakrętów.</string>
+    <string name="circuit_albert_park_characteristics">Połączenie średnio szybkich sekcji i technicznych zakrętów. Po zmianach w 2022 tor stał się szybszy i bardziej płynny.</string>
+    <string name="circuit_albert_park_challenges">Wąskie strefy wyjazdowe i śliska nawierzchnia na początku weekendu. Zakręty 11-12 to kluczowy podwójny zakręt.</string>
+    <string name="circuit_albert_park_trivia">Jeden z nielicznych torów, po których poza sezonem kibice mogą chodzić po dużej części nitki.</string>
+    <string name="circuit_albert_park_drs">Dwie strefy - prosta startowa oraz między zakrętami 2-3.</string>
+
+    <string name="circuit_bahrain_main">Bahrain International Circuit (Sakhir) to pustynny tor 5.412 km z 15 zakrętami.</string>
+    <string name="circuit_bahrain_characteristics">Mocne hamowania, agresywny asfalt, nocne wyścigi od 2014.</string>
+    <string name="circuit_bahrain_challenges">Piasek na torze, wysokie zużycie hamulców, trudna trakcja w zakrętach 9-10.</string>
+    <string name="circuit_bahrain_trivia">Pierwszy tor F1 na Bliskim Wschodzie (od 2004). Zewnętrzny układ użyty w 2020 był najkrótszy w historii F1.</string>
+    <string name="circuit_bahrain_drs">Dwie strefy - prosta startowa i między zakrętami 3-4.</string>
+
+    <string name="circuit_catalunya_main">Circuit de Barcelona-Catalunya to testowy tor 4.675 km z 16 zakrętami.</string>
+    <string name="circuit_catalunya_characteristics">Świetny do testów dzięki mieszance wszystkich typów zakrętów. Szybka sekcja 3-9 i techniczny finał.</string>
+    <string name="circuit_catalunya_challenges">Zmienny wiatr, trakcja na wyjściu z zakrętu 10, przegrzewanie opon w długim zakręcie 3.</string>
+    <string name="circuit_catalunya_trivia">Ostatni zakręt był wielokrotnie modyfikowany; w 2021 usunięto szykanę, wracając do klasycznego profilu.</string>
+    <string name="circuit_catalunya_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_monaco_main">Circuit de Monaco to uliczny tor 3.337 km i najwolniejszy w kalendarzu, z 19 zakrętami.</string>
+    <string name="circuit_monaco_characteristics">Bardzo wąski (najwęższy punkt: 8 m) i bez marginesu błędu. Tunel to jedyna sekcja na pełnym gazie.</string>
+    <string name="circuit_monaco_challenges">Fizycznie jeden z najtrudniejszych wyścigów - ponad 40 ruchów kierownicą na okrążenie.</string>
+    <string name="circuit_monaco_trivia">Tylko trzech kierowców w historii zakwalifikowało się bez dotknięcia barier (Senna, Schumacher, Leclerc).</string>
+    <string name="circuit_monaco_drs">Jedna strefa - z tunelu do Nouvelle Chicane.</string>
+
+    <string name="circuit_baku_main">Baku City Circuit to uliczny tor 6.003 km z 20 zakrętami i bardzo wysokimi prędkościami.</string>
+    <string name="circuit_baku_characteristics">Mieszanka wąskich średniowiecznych ulic (7.6 m szerokości) i prostej 2.2 km. Zakręt 8 jest najciaśniejszy w F1.</string>
+    <string name="circuit_baku_challenges">Nagłe podmuchy wiatru między budynkami i trudna ocena odległości w sekcji zamkowej.</string>
+    <string name="circuit_baku_trivia">Prosta start/meta jest dłuższa niż cały tor w Monako. W 2017 Vettel celowo uderzył tu w Hamiltona.</string>
+    <string name="circuit_baku_drs">Dwie strefy - prosta startowa i przed zakrętem 3.</string>
+
+    <string name="circuit_spa_main">Circuit de Spa-Francorchamps to tor 7.004 km, najdłuższy w F1, z 19 zakrętami.</string>
+    <string name="circuit_spa_characteristics">Eau Rouge-Raidillon to najbardziej ikoniczna sekcja F1. Płynne, szybkie zakręty przez las Ardenów.</string>
+    <string name="circuit_spa_challenges">Mikroklimat - deszcz często pada tylko na części toru. Prosta Kemmel to hotspot jazdy w cieniu.</string>
+    <string name="circuit_spa_trivia">Pełny układ z lat 20. miał 14 km. Nowe strefy wyjazdowe dodano w 2022 po wypadku Huberta.</string>
+    <string name="circuit_spa_drs">Dwie strefy - prosta Kemmel i prosta startowa.</string>
+
+    <string name="circuit_zandvoort_main">Circuit Zandvoort to nadmorski tor 4.259 km z 14 zakrętami.</string>
+    <string name="circuit_zandvoort_characteristics">Pochylone zakręty (do 19 stopni), piaszczyste otoczenie i morskie wiatry.</string>
+    <string name="circuit_zandvoort_challenges">Utrzymanie prędkości przez pochylony ostatni zakręt na prostą.</string>
+    <string name="circuit_zandvoort_trivia">Tarzan (zakręt 1) ma promień 18 m, najmniejszy w kalendarzu F1, nazwany od protestującego rolnika.</string>
+    <string name="circuit_zandvoort_drs">Jedna strefa - prosta startowa.</string>
+
+    <string name="circuit_monza_main">Autodromo Nazionale Monza to tor 5.793 km, „Świątynia Prędkości”, z 11 zakrętami.</string>
+    <string name="circuit_monza_characteristics">Samochody jadą na pełnym gazie przez ok. 80%% okrążenia. Parabolica to ostatni duży szybki zakręt w F1.</string>
+    <string name="circuit_monza_challenges">Hamowanie z 350+ km/h do 70 km/h w pierwszej szykanie, trakcja na wyjściach.</string>
+    <string name="circuit_monza_trivia">W 1971 Peter Gethin wygrał o 0.01 s, najciaśniejszy finisz w historii F1.</string>
+    <string name="circuit_monza_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_marina_bay_main">Marina Bay Street Circuit to nocny uliczny tor 5.063 km z 23 zakrętami.</string>
+    <string name="circuit_marina_bay_characteristics">Nocna sauna - 90%% pełnego gazu, wilgotność ponad 80%%. Sekcja mostu daje wyjątkową akustykę.</string>
+    <string name="circuit_marina_bay_challenges">Wytrzymałość fizyczna (kierowcy mogą stracić do 3 kg) i śliskie łączenia płyt drogowych.</string>
+    <string name="circuit_marina_bay_trivia">Oświetlenie pobiera 3 000 000 W, wystarczająco dla ok. 1200 domów.</string>
+    <string name="circuit_marina_bay_drs">Dwie strefy - prosta startowa i między zakrętami 5-7.</string>
+
+    <string name="circuit_suzuka_main">Suzuka International Racing Course to tor 5.807 km w kształcie ósemki z 18 zakrętami.</string>
+    <string name="circuit_suzuka_characteristics">Jedyny prawdziwy tor w kształcie ósemki w kalendarzu. Essesy są testem precyzji zawieszenia.</string>
+    <string name="circuit_suzuka_challenges">Sekwencje zakrętów, gdzie błąd na początku psuje cały odcinek. Degner to zakręt, który podchwytuje kierowców.</string>
+    <string name="circuit_suzuka_trivia">Wyścigi 1989 i 1990 rozstrzygnęły tytuł dzięki słynnym kolizjom Prost-Senna.</string>
+    <string name="circuit_suzuka_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_americas_main">Circuit of The Americas to nowoczesny tor 5.513 km z 20 zakrętami.</string>
+    <string name="circuit_americas_characteristics">Różnice wysokości do 40 m; sektor 1 to hołd dla Silverstone, Hockenheim i Suzuki.</string>
+    <string name="circuit_americas_challenges">Zmieniająca się przyczepność między sektorami i ślepe wierzchołki w sekcji 12-15.</string>
+    <string name="circuit_americas_trivia">Zaprojektowany pod wyprzedzanie; wyścig 2012 miał rekordowe 20 manewrów.</string>
+    <string name="circuit_americas_drs">Dwie strefy - prosta startowa i przed zakrętem 12.</string>
+
+    <string name="circuit_vegas_main">Las Vegas Strip Circuit to nocny uliczny tor 6.201 km z 17 zakrętami.</string>
+    <string name="circuit_vegas_characteristics">Nocne ściganie wśród neonów, długie proste przeplatane ciasnymi zakrętami.</string>
+    <string name="circuit_vegas_challenges">Zimne opony w nocnych temperaturach i śliskie malowane przejścia.</string>
+    <string name="circuit_vegas_trivia">W 2023 w treningu poluzowała się pokrywa studzienki, uszkadzając bolidy Sainza i Ocona.</string>
+    <string name="circuit_vegas_drs">Trzy strefy - najwięcej jak na tor uliczny.</string>
+
+    <string name="circuit_jeddah_main">Jeddah Corniche Circuit to uliczny tor 6.174 km z 27 zakrętami i bardzo wysoką średnią prędkością.</string>
+    <string name="circuit_jeddah_characteristics">Średnia prędkość powyżej 250 km/h. 27 zakrętów zaprojektowano tak, by tor był płynny jak stały obiekt.</string>
+    <string name="circuit_jeddah_challenges">Ślepe zakręty przy ścianach i groźne uderzenia (np. Schumacher w 2022).</string>
+    <string name="circuit_jeddah_trivia">Zbudowany w 8 miesięcy, rekord F1. Zakręt 22 ma przydomek The Lance Stroll.</string>
+    <string name="circuit_jeddah_drs">Dwie strefy - prosta startowa i przed zakrętem 27.</string>
+
+    <string name="circuit_hungaroring_main">Hungaroring to techniczny tor 4.381 km z 14 zakrętami.</string>
+    <string name="circuit_hungaroring_characteristics">Często nazywany „Monako bez ścian” - ciasny, kręty i trudny do wyprzedzania.</string>
+    <string name="circuit_hungaroring_challenges">Wysokie temperatury, zakurzona nawierzchnia i trudna trakcja w zakręcie 4.</string>
+    <string name="circuit_hungaroring_trivia">Fernando Alonso odniósł tu pierwsze zwycięstwo w 2003 (wtedy najmłodszy zwycięzca).</string>
+    <string name="circuit_hungaroring_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_villeneuve_main">Circuit Gilles Villeneuve to wyspiarski tor 4.361 km z 14 zakrętami.</string>
+    <string name="circuit_villeneuve_characteristics">Słynie ze Ściany Mistrzów i intensywnych pojedynków na prostej startowej.</string>
+    <string name="circuit_villeneuve_challenges">Mocne hamowania i zarządzanie hamulcami, przy zmiennej pogodzie nad jeziorem.</string>
+    <string name="circuit_villeneuve_trivia">Wyścig 2011 był najdłuższy w historii F1 (4:04:39 z powodu deszczu).</string>
+    <string name="circuit_villeneuve_drs">Dwie strefy - prosta startowa i przed ostatnim zakrętem.</string>
+
+    <string name="circuit_silverstone_main">Silverstone Circuit to historyczny tor 5.891 km z 18 zakrętami.</string>
+    <string name="circuit_silverstone_characteristics">Miejsce pierwszego wyścigu F1 w 1950. Maggots-Becketts-Chapel to test precyzji.</string>
+    <string name="circuit_silverstone_challenges">Nieprzewidywalna brytyjska pogoda i bardzo szybkie zakręty.</string>
+    <string name="circuit_silverstone_trivia">W 2020 padł rekord awarii opon (pięć w jednym wyścigu).</string>
+    <string name="circuit_silverstone_drs">Dwie strefy - prosta startowa i przed zakrętem 6.</string>
+
+    <string name="circuit_red_bull_ring_main">Red Bull Ring to krótki, stromy tor 4.318 km z 10 zakrętami.</string>
+    <string name="circuit_red_bull_ring_characteristics">Górskie otoczenie z trzema długimi prostymi i szybkimi zakrętami.</string>
+    <string name="circuit_red_bull_ring_challenges">Zmiany wysokości i efektywność aero na wysokości.</string>
+    <string name="circuit_red_bull_ring_trivia">W 2020 rozegrano dwa wyścigi w kolejne tygodnie z powodu pandemii.</string>
+    <string name="circuit_red_bull_ring_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_paul_ricard_main">Circuit Paul Ricard to tor 5.842 km z 15 zakrętami.</string>
+    <string name="circuit_paul_ricard_characteristics">Znany z niebiesko-czerwonych stref wyjazdowych i rozległego asfaltu.</string>
+    <string name="circuit_paul_ricard_challenges">Monotonna konfiguracja i trudna ocena odległości przez podobne zakręty.</string>
+    <string name="circuit_paul_ricard_trivia">Ma 167 możliwych konfiguracji dzięki modułowemu układowi.</string>
+    <string name="circuit_paul_ricard_drs">Dwie strefy - prosta startowa i przed zakrętem 8.</string>
+
+    <string name="circuit_interlagos_main">Autodromo Jose Carlos Pace (Interlagos) to tor 4.309 km z 15 zakrętami.</string>
+    <string name="circuit_interlagos_characteristics">Stromy, z dużymi zmianami wysokości, jeżdżony przeciwnie do ruchu wskazówek.</string>
+    <string name="circuit_interlagos_challenges">Zmienna pogoda i wymagania fizyczne przez różnice wysokości.</string>
+    <string name="circuit_interlagos_trivia">Miejsce dramatycznego tytułu Hamiltona w 2008 na ostatnim zakręcie.</string>
+    <string name="circuit_interlagos_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_yas_marina_main">Yas Marina Circuit to nocny tor 5.281 km z 16 zakrętami.</string>
+    <string name="circuit_yas_marina_characteristics">Nowoczesny obiekt z wyścigami o zmierzchu i hotelem nad torem.</string>
+    <string name="circuit_yas_marina_challenges">Sekcja przy Yas Hotel ma ciasne zakręty i tunel wyjazdu z alei.</string>
+    <string name="circuit_yas_marina_trivia">Wyścig 2021 przyniósł kontrowersyjny finał sezonu i tytuł Verstappena.</string>
+    <string name="circuit_yas_marina_drs">Dwie strefy - prosta startowa i przed zakrętem 7.</string>
+
+    <string name="circuit_miami_main">Miami International Autodrome to uliczny tor 5.412 km z 19 zakrętami.</string>
+    <string name="circuit_miami_characteristics">Nowy tor wokół Hard Rock Stadium łączący szybkie sekcje z technicznymi zakrętami.</string>
+    <string name="circuit_miami_challenges">Śliskie strefy wyjazdowe i sztuczna marina tworząca złudzenia.</string>
+    <string name="circuit_miami_trivia">Pierwszy wyścig odbył się w 2022 i wygrał go Max Verstappen.</string>
+    <string name="circuit_miami_drs">Dwie strefy - prosta startowa i przed zakrętem 11.</string>
+
+    <string name="circuit_losail_main">Losail International Circuit to tor 5.380 km z 16 zakrętami.</string>
+    <string name="circuit_losail_characteristics">Tor motocyklowy zaadaptowany do F1 z szybkim, płynnym układem.</string>
+    <string name="circuit_losail_challenges">Nocne oświetlenie i szeroki tor sprzyjający dynamicznej jeździe.</string>
+    <string name="circuit_losail_trivia">Pierwszy wyścig F1 w Katarze odbył się tu w 2021.</string>
+    <string name="circuit_losail_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_shanghai_main">Shanghai International Circuit to tor 5.451 km ukształtowany jak chiński znak „Shang”, z 16 zakrętami.</string>
+    <string name="circuit_shanghai_characteristics">Znany z długiej prostej i wymagającej sekwencji zakrętów 1-2-3.</string>
+    <string name="circuit_shanghai_challenges">Techniczne sekcje i zmienne warunki pogodowe.</string>
+    <string name="circuit_shanghai_trivia">Zaprojektowany tak, by przypominał pierwszy znak nazwy miasta Shanghai.</string>
+    <string name="circuit_shanghai_drs">Dwie strefy - prosta startowa i przed zakrętem 14.</string>
+
+    <string name="circuit_imola_main">Autodromo Enzo e Dino Ferrari (Imola) to klasyczny tor 4.909 km z 19 zakrętami.</string>
+    <string name="circuit_imola_characteristics">Wąski, pofałdowany, otoczony drzewami, z bogatą historią.</string>
+    <string name="circuit_imola_challenges">Mało miejsca na błędy i trudne wyprzedzanie.</string>
+    <string name="circuit_imola_trivia">Weekend 1994 przyniósł śmiertelne wypadki Senny i Ratzenbergera.</string>
+    <string name="circuit_imola_drs">Jedna strefa - prosta startowa.</string>
+
+    <string name="circuit_portimao_main">Autodromo Internacional do Algarve to tor 4.653 km o profilu rollercoastera z 15 zakrętami.</string>
+    <string name="circuit_portimao_characteristics">Pofałdowany układ ze zmianami wysokości do 60 m.</string>
+    <string name="circuit_portimao_challenges">Ślepe wierzchołki i trudna ocena odległości.</string>
+    <string name="circuit_portimao_trivia">Pierwszy wyścig F1 odbył się tu w 2020 z powodu pandemii.</string>
+    <string name="circuit_portimao_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_istanbul_main">Istanbul Park to tor 5.338 km z 14 zakrętami.</string>
+    <string name="circuit_istanbul_characteristics">Znany z zakrętu 8, jednego z najtrudniejszych w F1 z czterema wierzchołkami.</string>
+    <string name="circuit_istanbul_challenges">Zmienna przyczepność na „zielonej” nawierzchni.</string>
+    <string name="circuit_istanbul_trivia">W 2020 Hamilton przypieczętował tu siódmy tytuł w efektownym poślizgu.</string>
+    <string name="circuit_istanbul_drs">Dwie strefy - prosta startowa i przed zakrętem 12.</string>
+
+    <string name="circuit_nurburgring_main">Nurburgring GP-Strecke to tor 5.148 km z 15 zakrętami.</string>
+    <string name="circuit_nurburgring_characteristics">Młodszy brat Nordschleife; techniczna sekcja stadionowa kontrastuje z szybkimi leśnymi zakrętami.</string>
+    <string name="circuit_nurburgring_challenges">Mikroklimat zmieniający się co kilka minut.</string>
+    <string name="circuit_nurburgring_trivia">Pełna Nordschleife (20.8 km) nazywana jest Zielonym Piekłem.</string>
+    <string name="circuit_nurburgring_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_hockenheim_main">Hockenheimring to tor 4.574 km z 17 zakrętami.</string>
+    <string name="circuit_hockenheim_characteristics">Historycznie długie leśne proste; po 2002 techniczny finał stadionowy.</string>
+    <string name="circuit_hockenheim_challenges">Hamowanie do nawrotu z 330 km/h.</string>
+    <string name="circuit_hockenheim_trivia">W 2000 Barrichello wygrał w deszczu startując z 18. pola.</string>
+    <string name="circuit_hockenheim_drs">Dwie strefy - prosta startowa i przed zakrętem 6.</string>
+
+    <string name="circuit_sochi_main">Sochi Autodrom to tor 5.848 km w parku olimpijskim z 19 zakrętami.</string>
+    <string name="circuit_sochi_characteristics">Mieszanka średnio szybkich zakrętów wzdłuż nadmorskiego bulwaru.</string>
+    <string name="circuit_sochi_challenges">Wiele technicznych zakrętów pod kątem 90 stopni.</string>
+    <string name="circuit_sochi_trivia">Zbudowany wokół obiektów ZIO w Soczi 2014.</string>
+    <string name="circuit_sochi_drs">Dwie strefy - prosta startowa i przed zakrętem 2.</string>
+
+    <string name="circuit_kyalami_main">Kyalami Grand Prix Circuit to tor 4.529 km z 9 zakrętami.</string>
+    <string name="circuit_kyalami_characteristics">Położony 1500 m n.p.m. z szybkimi zakrętami i stromym profilem.</string>
+    <string name="circuit_kyalami_challenges">Rzadkie powietrze wpływa na moc silnika i chłodzenie.</string>
+    <string name="circuit_kyalami_trivia">W latach 70. był tu niebezpieczny zakręt Barbeque Bend.</string>
+    <string name="circuit_kyalami_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_bahrain_outer_main">Bahrain Outer Track to krótki układ 3.543 km użyty w 2020.</string>
+    <string name="circuit_bahrain_outer_characteristics">Użyty tylko raz w 2020 i nazywany „prawie owalem”.</string>
+    <string name="circuit_bahrain_outer_challenges">Bardzo szybkie okrążenia (poniżej minuty) i intensywna walka koło w koło.</string>
+    <string name="circuit_bahrain_outer_trivia">Najkrótszy tor w historii F1, stworzony na pandemiczny sezon.</string>
+    <string name="circuit_bahrain_outer_drs">Jedna strefa - prosta startowa.</string>
+
+    <string name="circuit_sepang_main">Sepang International Circuit to tor 5.543 km z 15 zakrętami.</string>
+    <string name="circuit_sepang_characteristics">Pierwszy tilkodrom z szerokimi zakrętami i podwójną prostą.</string>
+    <string name="circuit_sepang_challenges">Ekstremalna wilgotność i nagłe monsuny.</string>
+    <string name="circuit_sepang_trivia">W 2001 deszcz przed startem był tak silny, że kierowcy czekali 50 minut.</string>
+    <string name="circuit_sepang_drs">Dwie strefy - obie na podwójnej prostej start/meta.</string>
+
+    <string name="circuit_hanoi_main">Hanoi Street Circuit był planowanym ulicznym torem 5.607 km z 23 zakrętami.</string>
+    <string name="circuit_hanoi_characteristics">Zaprojektowany jako połączenie długich prostych z technicznymi sekcjami inspirowanymi Suzuki i Monako.</string>
+    <string name="circuit_hanoi_challenges">Wysoka wilgotność i temperatury typowe dla Wietnamu.</string>
+    <string name="circuit_hanoi_trivia">Nigdy nie gościł F1 z powodu pandemii, mimo pełnego przygotowania.</string>
+    <string name="circuit_hanoi_drs">Planowane trzy strefy DRS.</string>
+
+    <string name="circuit_buddh_main">Buddh International Circuit to tor 5.125 km z 16 zakrętami.</string>
+    <string name="circuit_buddh_characteristics">Szeroki układ sprzyjający wyprzedzaniu z charakterystyczną sekwencją zakrętów 10-11.</string>
+    <string name="circuit_buddh_challenges">Wysokie temperatury i pył typowy dla regionu Delhi.</string>
+    <string name="circuit_buddh_trivia">Gościł F1 w latach 2011-2013, potem usunięty z kalendarza z powodów finansowych.</string>
+    <string name="circuit_buddh_drs">Dwie strefy - prosta startowa i przed zakrętem 4.</string>
+
+    <string name="circuit_valencia_main">Valencia Street Circuit to uliczny tor 5.419 km z 25 zakrętami.</string>
+    <string name="circuit_valencia_characteristics">Biegł wokół portu w Walencji z widokiem na Morze Śródziemne.</string>
+    <string name="circuit_valencia_challenges">Wąskie sekcje między barierami z minimalnym marginesem błędu.</string>
+    <string name="circuit_valencia_trivia">Miejsce słynnego manewru Fernando Alonso w 2012.</string>
+    <string name="circuit_valencia_drs">Dwie strefy - prosta startowa i przed zakrętem 12.</string>
+
+    <string name="circuit_yeongam_main">Korean International Circuit to tor 5.615 km z 18 zakrętami.</string>
+    <string name="circuit_yeongam_characteristics">Mieszanka szybkich i technicznych sekcji, z sektorem 1 podobnym do stałego toru.</string>
+    <string name="circuit_yeongam_challenges">Niska frekwencja i problemy organizacyjne.</string>
+    <string name="circuit_yeongam_trivia">Gościł F1 tylko w latach 2010-2013, później opuszczony z braku zainteresowania.</string>
+    <string name="circuit_yeongam_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+
+    <string name="circuit_fuji_main">Fuji Speedway to tor 4.563 km z 16 zakrętami.</string>
+    <string name="circuit_fuji_characteristics">Położony u podnóża góry Fuji z bardzo długą prostą.</string>
+    <string name="circuit_fuji_challenges">Zmienne warunki pogodowe typowe dla regionu.</string>
+    <string name="circuit_fuji_trivia">Ostatni raz gościł F1 w 2008 w pamiętnym deszczowym wyścigu.</string>
+    <string name="circuit_fuji_drs">Dwie strefy - prosta startowa i przed zakrętem 10.</string>
+
+    <string name="circuit_adelaide_main">Adelaide Street Circuit to uliczny tor 3.780 km z 16 zakrętami.</string>
+    <string name="circuit_adelaide_characteristics">Słynie z ciasnych zakrętów i bardzo wymagającego charakteru.</string>
+    <string name="circuit_adelaide_challenges">Wąskie ulice z minimalnym marginesem błędu.</string>
+    <string name="circuit_adelaide_trivia">Miejsce dramatycznych wyścigów decydujących o tytule w 1986 i 1994.</string>
+    <string name="circuit_adelaide_drs">Brak stref DRS (tor używany przed erą DRS).</string>
+
+    <string name="circuit_mugello_main">Mugello Circuit to tor 5.245 km z 15 zakrętami.</string>
+    <string name="circuit_mugello_characteristics">Tor testowy Ferrari z szybkimi, płynnymi zakrętami i dużymi różnicami wysokości.</string>
+    <string name="circuit_mugello_challenges">Szybkie zakręty wymagające idealnej linii.</string>
+    <string name="circuit_mugello_trivia">Gościł F1 tylko raz w 2020 z powodu pandemii, z rekordową liczbą kar.</string>
+    <string name="circuit_mugello_drs">Dwie strefy - prosta startowa i przed zakrętem 1.</string>
+</resources>
+

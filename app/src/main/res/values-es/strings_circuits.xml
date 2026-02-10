@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="circuit_albert_park_main">El Melbourne Grand Prix Circuit (Albert Park) es un circuito urbano temporal de 5.303 km con 14 curvas.</string>
+    <string name="circuit_albert_park_characteristics">Mezcla de secciones de media-alta velocidad y curvas técnicas. Tras los cambios de 2022 se volvió más rápido y fluido.</string>
+    <string name="circuit_albert_park_challenges">Zonas de escape estrechas, superficie resbaladiza al inicio del fin de semana. Las curvas 11-12 son un doble giro clave.</string>
+    <string name="circuit_albert_park_trivia">Uno de los pocos circuitos donde los espectadores pueden caminar gran parte del trazado fuera de temporada.</string>
+    <string name="circuit_albert_park_drs">Dos zonas - recta principal y entre las curvas 2-3.</string>
+
+    <string name="circuit_bahrain_main">El Bahrain International Circuit (Sakhir) es un circuito desértico de 5.412 km con 15 curvas.</string>
+    <string name="circuit_bahrain_characteristics">Frenadas fuertes, asfalto abrasivo, carreras nocturnas desde 2014.</string>
+    <string name="circuit_bahrain_challenges">Arena en pista, alto desgaste de frenos y tracción complicada en las curvas 9-10.</string>
+    <string name="circuit_bahrain_trivia">Primer circuito de F1 en Oriente Medio (desde 2004). El trazado exterior usado en 2020 fue el más corto en la historia de F1.</string>
+    <string name="circuit_bahrain_drs">Dos zonas - recta principal y entre las curvas 3-4.</string>
+
+    <string name="circuit_catalunya_main">El Circuit de Barcelona-Catalunya es un circuito de pruebas de 4.675 km con 16 curvas.</string>
+    <string name="circuit_catalunya_characteristics">Excelente para pruebas con mezcla de todos los tipos de curvas. Sector 3-9 rápido y tramo final técnico.</string>
+    <string name="circuit_catalunya_challenges">Vientos variables, tracción a la salida de la curva 10, sobrecalentamiento de neumáticos en la larga curva 3.</string>
+    <string name="circuit_catalunya_trivia">La última curva se ha modificado varias veces; en 2021 se eliminó la chicane, volviendo al perfil clásico.</string>
+    <string name="circuit_catalunya_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_monaco_main">El Circuit de Monaco es un circuito urbano de 3.337 km y el más lento del calendario, con 19 curvas.</string>
+    <string name="circuit_monaco_characteristics">Muy estrecho (punto más angosto: 8 m) y sin margen de error. El túnel es la única sección a fondo.</string>
+    <string name="circuit_monaco_challenges">Físicamente una de las carreras más duras: más de 40 movimientos de dirección por vuelta.</string>
+    <string name="circuit_monaco_trivia">Solo tres pilotos en la historia clasificaron sin tocar las barreras (Senna, Schumacher, Leclerc).</string>
+    <string name="circuit_monaco_drs">Una zona - del túnel a la Nouvelle Chicane.</string>
+
+    <string name="circuit_baku_main">El Baku City Circuit es un circuito urbano de 6.003 km con 20 curvas y velocidades muy altas.</string>
+    <string name="circuit_baku_characteristics">Mezcla de calles medievales estrechas (7.6 m de ancho) y una recta de 2.2 km. La curva 8 es la más cerrada de F1.</string>
+    <string name="circuit_baku_challenges">Ráfagas de viento entre edificios y difícil cálculo de distancias en la sección del castillo.</string>
+    <string name="circuit_baku_trivia">La recta de meta es más larga que todo el circuito de Mónaco. En 2017 Vettel golpeó deliberadamente a Hamilton aquí.</string>
+    <string name="circuit_baku_drs">Dos zonas - recta principal y antes de la curva 3.</string>
+
+    <string name="circuit_spa_main">El Circuit de Spa-Francorchamps es un circuito de 7.004 km, el más largo de F1, con 19 curvas.</string>
+    <string name="circuit_spa_characteristics">Eau Rouge-Raidillon es la sección más icónica de F1. Curvas rápidas y fluidas a través del bosque de las Ardenas.</string>
+    <string name="circuit_spa_challenges">Microclima: a menudo llueve solo en parte del circuito. La recta Kemmel es un punto clave de rebufo.</string>
+    <string name="circuit_spa_trivia">El trazado completo de los años 20 era de 14 km. Se añadieron nuevas escapatorias en 2022 tras el accidente de Hubert.</string>
+    <string name="circuit_spa_drs">Dos zonas - recta Kemmel y recta principal.</string>
+
+    <string name="circuit_zandvoort_main">El Circuit Zandvoort es un circuito costero de 4.259 km con 14 curvas.</string>
+    <string name="circuit_zandvoort_characteristics">Curvas peraltadas (hasta 19 grados), entorno arenoso y vientos marinos.</string>
+    <string name="circuit_zandvoort_challenges">Mantener la velocidad en la curva final peraltada hacia la recta.</string>
+    <string name="circuit_zandvoort_trivia">Tarzan (curva 1) tiene un radio de 18 m, el más pequeño del calendario, nombrado por un granjero que protestó.</string>
+    <string name="circuit_zandvoort_drs">Una zona - recta principal.</string>
+
+    <string name="circuit_monza_main">El Autodromo Nazionale Monza es un circuito de 5.793 km, el “Templo de la Velocidad”, con 11 curvas.</string>
+    <string name="circuit_monza_characteristics">Los coches van a fondo cerca del 80%% de la vuelta. Parabolica es la última gran curva rápida en F1.</string>
+    <string name="circuit_monza_challenges">Frenar de 350+ km/h a 70 km/h en la primera chicane, tracción a la salida.</string>
+    <string name="circuit_monza_trivia">En 1971 Peter Gethin ganó por 0.01 s, el final más ajustado en la historia de F1.</string>
+    <string name="circuit_monza_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_marina_bay_main">El Marina Bay Street Circuit es un circuito urbano nocturno de 5.063 km con 23 curvas.</string>
+    <string name="circuit_marina_bay_characteristics">Una sauna nocturna: 90%% a fondo, humedad superior al 80%%. La sección del puente destaca por la acústica.</string>
+    <string name="circuit_marina_bay_challenges">Resistencia física (los pilotos pueden perder hasta 3 kg) y uniones resbaladizas entre placas.</string>
+    <string name="circuit_marina_bay_trivia">La iluminación consume 3.000.000 W, suficiente para unas 1.200 viviendas.</string>
+    <string name="circuit_marina_bay_drs">Dos zonas - recta principal y entre las curvas 5-7.</string>
+
+    <string name="circuit_suzuka_main">El Suzuka International Racing Course es un circuito de 5.807 km con forma de ocho y 18 curvas.</string>
+    <string name="circuit_suzuka_characteristics">El único ocho real del calendario. Las Esses son una prueba de precisión para la suspensión.</string>
+    <string name="circuit_suzuka_challenges">Secuencias donde un error temprano arruina toda la sección. Degner es una curva que engaña a los pilotos.</string>
+    <string name="circuit_suzuka_trivia">Las carreras de 1989 y 1990 decidieron el título con las famosas colisiones Prost-Senna.</string>
+    <string name="circuit_suzuka_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_americas_main">El Circuit of The Americas es un circuito moderno de 5.513 km con 20 curvas.</string>
+    <string name="circuit_americas_characteristics">Cambios de elevación de hasta 40 m; el sector 1 es un homenaje a Silverstone, Hockenheim y Suzuka.</string>
+    <string name="circuit_americas_challenges">Agarre cambiante entre sectores y vértices ciegos en la sección 12-15.</string>
+    <string name="circuit_americas_trivia">Diseñado para favorecer adelantamientos; la carrera de 2012 tuvo un récord de 20 pases.</string>
+    <string name="circuit_americas_drs">Dos zonas - recta principal y antes de la curva 12.</string>
+
+    <string name="circuit_vegas_main">El Las Vegas Strip Circuit es un circuito urbano nocturno de 6.201 km con 17 curvas.</string>
+    <string name="circuit_vegas_characteristics">Carreras nocturnas entre neones con largas rectas interrumpidas por curvas cerradas.</string>
+    <string name="circuit_vegas_challenges">Neumáticos fríos en temperaturas nocturnas y pasos pintados resbaladizos.</string>
+    <string name="circuit_vegas_trivia">En 2023 se soltó una tapa de alcantarilla en prácticas, dañando los coches de Sainz y Ocon.</string>
+    <string name="circuit_vegas_drs">Tres zonas - el máximo para un circuito urbano.</string>
+
+    <string name="circuit_jeddah_main">El Jeddah Corniche Circuit es un circuito urbano de 6.174 km con 27 curvas y una media muy alta.</string>
+    <string name="circuit_jeddah_characteristics">Velocidad media por encima de 250 km/h. Las 27 curvas están diseñadas para sentirse como un circuito permanente fluido.</string>
+    <string name="circuit_jeddah_challenges">Curvas ciegas junto a muros y choques de alto impacto (p. ej., Schumacher en 2022).</string>
+    <string name="circuit_jeddah_trivia">Construido en 8 meses, récord de F1. La curva 22 tiene el apodo The Lance Stroll.</string>
+    <string name="circuit_jeddah_drs">Dos zonas - recta principal y antes de la curva 27.</string>
+
+    <string name="circuit_hungaroring_main">El Hungaroring es un circuito técnico de 4.381 km con 14 curvas.</string>
+    <string name="circuit_hungaroring_characteristics">A menudo llamado “Mónaco sin muros” - estrecho, retorcido y difícil para adelantar.</string>
+    <string name="circuit_hungaroring_challenges">Altas temperaturas, superficie polvorienta y tracción complicada en la curva 4.</string>
+    <string name="circuit_hungaroring_trivia">Fernando Alonso logró aquí su primera victoria en 2003 (entonces el ganador más joven).</string>
+    <string name="circuit_hungaroring_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_villeneuve_main">El Circuit Gilles Villeneuve es un circuito insular de 4.361 km con 14 curvas.</string>
+    <string name="circuit_villeneuve_characteristics">Famoso por el “Muro de los Campeones” y las batallas en la recta principal.</string>
+    <string name="circuit_villeneuve_challenges">Frenadas fuertes y gestión de frenos, con clima cambiante junto al lago.</string>
+    <string name="circuit_villeneuve_trivia">La carrera de 2011 fue la más larga de la historia de F1 (4h04:39 por lluvia).</string>
+    <string name="circuit_villeneuve_drs">Dos zonas - recta principal y antes de la última curva.</string>
+
+    <string name="circuit_silverstone_main">El Silverstone Circuit es un histórico trazado de 5.891 km con 18 curvas.</string>
+    <string name="circuit_silverstone_characteristics">Sede de la primera carrera de F1 en 1950. Maggots-Becketts-Chapel es una prueba de precisión.</string>
+    <string name="circuit_silverstone_challenges">Clima británico impredecible y curvas de altísima velocidad.</string>
+    <string name="circuit_silverstone_trivia">En 2020 hubo un número récord de fallos de neumáticos (cinco en una carrera).</string>
+    <string name="circuit_silverstone_drs">Dos zonas - recta principal y antes de la curva 6.</string>
+
+    <string name="circuit_red_bull_ring_main">El Red Bull Ring es un circuito corto y empinado de 4.318 km con 10 curvas.</string>
+    <string name="circuit_red_bull_ring_characteristics">Entorno montañoso con tres rectas largas y curvas rápidas.</string>
+    <string name="circuit_red_bull_ring_challenges">Cambios de elevación y eficiencia aerodinámica en altura.</string>
+    <string name="circuit_red_bull_ring_trivia">En 2020 se disputaron dos carreras en semanas consecutivas por la pandemia.</string>
+    <string name="circuit_red_bull_ring_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_paul_ricard_main">El Circuit Paul Ricard es un circuito de 5.842 km con 15 curvas.</string>
+    <string name="circuit_paul_ricard_characteristics">Conocido por sus escapatorias azul y rojo y su amplio asfalto.</string>
+    <string name="circuit_paul_ricard_challenges">Trazado monótono y difícil cálculo de distancias por curvas similares.</string>
+    <string name="circuit_paul_ricard_trivia">Tiene 167 configuraciones posibles gracias a su diseño modular.</string>
+    <string name="circuit_paul_ricard_drs">Dos zonas - recta principal y antes de la curva 8.</string>
+
+    <string name="circuit_interlagos_main">El Autodromo Jose Carlos Pace (Interlagos) es un circuito de 4.309 km con 15 curvas.</string>
+    <string name="circuit_interlagos_characteristics">Empinado con grandes cambios de elevación, se corre en sentido antihorario.</string>
+    <string name="circuit_interlagos_challenges">Clima variable y exigencia física por los cambios de altura.</string>
+    <string name="circuit_interlagos_trivia">Escenario del dramático título de Hamilton en 2008 en la última curva.</string>
+    <string name="circuit_interlagos_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_yas_marina_main">El Yas Marina Circuit es un circuito nocturno de 5.281 km con 16 curvas.</string>
+    <string name="circuit_yas_marina_characteristics">Sede moderna con carreras al atardecer y un hotel sobre el circuito.</string>
+    <string name="circuit_yas_marina_challenges">La sección del Yas Hotel tiene curvas cerradas y un túnel de salida del pit lane.</string>
+    <string name="circuit_yas_marina_trivia">La carrera de 2021 tuvo un final de temporada polémico y el título de Verstappen.</string>
+    <string name="circuit_yas_marina_drs">Dos zonas - recta principal y antes de la curva 7.</string>
+
+    <string name="circuit_miami_main">El Miami International Autodrome es un circuito urbano de 5.412 km con 19 curvas.</string>
+    <string name="circuit_miami_characteristics">Nuevo trazado alrededor del Hard Rock Stadium que combina secciones rápidas con curvas técnicas.</string>
+    <string name="circuit_miami_challenges">Escapatorias resbaladizas y una marina falsa que crea ilusiones ópticas.</string>
+    <string name="circuit_miami_trivia">La primera carrera se celebró en 2022 y la ganó Max Verstappen.</string>
+    <string name="circuit_miami_drs">Dos zonas - recta principal y antes de la curva 11.</string>
+
+    <string name="circuit_losail_main">El Losail International Circuit es un circuito de 5.380 km con 16 curvas.</string>
+    <string name="circuit_losail_characteristics">Circuito de motociclismo adaptado a F1 con un trazado rápido y fluido.</string>
+    <string name="circuit_losail_challenges">Iluminación nocturna y un ancho de pista que favorece las luchas.</string>
+    <string name="circuit_losail_trivia">La primera carrera de F1 en Catar se celebró aquí en 2021.</string>
+    <string name="circuit_losail_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_shanghai_main">El Shanghai International Circuit es un circuito de 5.451 km con forma del carácter chino “Shang”, con 16 curvas.</string>
+    <string name="circuit_shanghai_characteristics">Conocido por su recta larga y la exigente secuencia de curvas 1-2-3.</string>
+    <string name="circuit_shanghai_challenges">Secciones técnicas y clima cambiante.</string>
+    <string name="circuit_shanghai_trivia">Diseñado para parecerse al primer carácter del nombre de la ciudad de Shanghai.</string>
+    <string name="circuit_shanghai_drs">Dos zonas - recta principal y antes de la curva 14.</string>
+
+    <string name="circuit_imola_main">El Autodromo Enzo e Dino Ferrari (Imola) es un circuito clásico de 4.909 km con 19 curvas.</string>
+    <string name="circuit_imola_characteristics">Estrecho y ondulado, rodeado de árboles, con mucha historia.</string>
+    <string name="circuit_imola_challenges">Poco margen de error y adelantamientos difíciles.</string>
+    <string name="circuit_imola_trivia">El fin de semana de 1994 tuvo los accidentes mortales de Senna y Ratzenberger.</string>
+    <string name="circuit_imola_drs">Una zona - recta principal.</string>
+
+    <string name="circuit_portimao_main">El Autodromo Internacional do Algarve es un circuito tipo montaña rusa de 4.653 km con 15 curvas.</string>
+    <string name="circuit_portimao_characteristics">Trazado ondulado con cambios de elevación de hasta 60 m.</string>
+    <string name="circuit_portimao_challenges">Vértices ciegos y difícil cálculo de distancias.</string>
+    <string name="circuit_portimao_trivia">Albergó su primera carrera de F1 en 2020 debido a la pandemia.</string>
+    <string name="circuit_portimao_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_istanbul_main">El Istanbul Park es un circuito de 5.338 km con 14 curvas.</string>
+    <string name="circuit_istanbul_characteristics">Famoso por la curva 8, una de las más duras de F1 con cuatro vértices.</string>
+    <string name="circuit_istanbul_challenges">Agarre variable en una pista “verde”.</string>
+    <string name="circuit_istanbul_trivia">En 2020 Hamilton selló aquí su séptimo título con un desliz legendario.</string>
+    <string name="circuit_istanbul_drs">Dos zonas - recta principal y antes de la curva 12.</string>
+
+    <string name="circuit_nurburgring_main">El Nurburgring GP-Strecke es un circuito de 5.148 km con 15 curvas.</string>
+    <string name="circuit_nurburgring_characteristics">Hermano menor del Nordschleife; la sección técnica del estadio contrasta con curvas rápidas en el bosque.</string>
+    <string name="circuit_nurburgring_challenges">Microclima que cambia cada pocos minutos.</string>
+    <string name="circuit_nurburgring_trivia">El Nordschleife completo (20.8 km) es conocido como el Infierno Verde.</string>
+    <string name="circuit_nurburgring_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_hockenheim_main">El Hockenheimring es un circuito de 4.574 km con 17 curvas.</string>
+    <string name="circuit_hockenheim_characteristics">Históricamente largas rectas por el bosque; tras 2002, un final técnico tipo estadio.</string>
+    <string name="circuit_hockenheim_challenges">Frenada hacia la horquilla desde 330 km/h.</string>
+    <string name="circuit_hockenheim_trivia">En 2000 Barrichello ganó bajo la lluvia desde el puesto 18.</string>
+    <string name="circuit_hockenheim_drs">Dos zonas - recta principal y antes de la curva 6.</string>
+
+    <string name="circuit_sochi_main">El Sochi Autodrom es un circuito de 5.848 km en el parque olímpico con 19 curvas.</string>
+    <string name="circuit_sochi_characteristics">Mezcla de curvas de velocidad media junto al bulevar costero.</string>
+    <string name="circuit_sochi_challenges">Muchas curvas técnicas de 90 grados.</string>
+    <string name="circuit_sochi_trivia">Construido alrededor de las sedes de los Juegos Olímpicos de Sochi 2014.</string>
+    <string name="circuit_sochi_drs">Dos zonas - recta principal y antes de la curva 2.</string>
+
+    <string name="circuit_kyalami_main">El Kyalami Grand Prix Circuit es un circuito de 4.529 km con 9 curvas.</string>
+    <string name="circuit_kyalami_characteristics">Situado a 1.500 m sobre el nivel del mar con curvas rápidas y un perfil empinado.</string>
+    <string name="circuit_kyalami_challenges">El aire fino afecta la potencia del motor y la refrigeración.</string>
+    <string name="circuit_kyalami_trivia">En los años 70 tenía la peligrosa curva Barbeque Bend.</string>
+    <string name="circuit_kyalami_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_bahrain_outer_main">El Bahrain Outer Track es un trazado corto de 3.543 km usado en 2020.</string>
+    <string name="circuit_bahrain_outer_characteristics">Usado una sola vez en 2020 y apodado “casi un óvalo”.</string>
+    <string name="circuit_bahrain_outer_challenges">Vuelta muy rápida (menos de un minuto) y mucha lucha rueda a rueda.</string>
+    <string name="circuit_bahrain_outer_trivia">El circuito más corto en la historia de F1, creado para la temporada de pandemia.</string>
+    <string name="circuit_bahrain_outer_drs">Una zona - recta principal.</string>
+
+    <string name="circuit_sepang_main">El Sepang International Circuit es un circuito de 5.543 km con 15 curvas.</string>
+    <string name="circuit_sepang_characteristics">El primer Tilke-dromo con curvas amplias y doble recta.</string>
+    <string name="circuit_sepang_challenges">Humedad extrema y tormentas monzónicas repentinas.</string>
+    <string name="circuit_sepang_trivia">En 2001 la lluvia antes de la salida fue tan intensa que los pilotos esperaron 50 minutos.</string>
+    <string name="circuit_sepang_drs">Dos zonas - ambas en la doble recta de meta.</string>
+
+    <string name="circuit_hanoi_main">El Hanoi Street Circuit era un circuito urbano planificado de 5.607 km con 23 curvas.</string>
+    <string name="circuit_hanoi_characteristics">Diseñado para combinar rectas largas con secciones técnicas inspiradas en Suzuka y Mónaco.</string>
+    <string name="circuit_hanoi_challenges">Alta humedad y temperaturas típicas de Vietnam.</string>
+    <string name="circuit_hanoi_trivia">Nunca albergó F1 por la pandemia pese a estar totalmente preparado.</string>
+    <string name="circuit_hanoi_drs">Se planearon tres zonas DRS.</string>
+
+    <string name="circuit_buddh_main">El Buddh International Circuit es un circuito de 5.125 km con 16 curvas.</string>
+    <string name="circuit_buddh_characteristics">Trazado ancho que favorece adelantamientos con la característica secuencia de curvas 10-11.</string>
+    <string name="circuit_buddh_challenges">Altas temperaturas y polvo típico de la región de Delhi.</string>
+    <string name="circuit_buddh_trivia">Albergó F1 de 2011 a 2013, luego fue retirado del calendario por razones financieras.</string>
+    <string name="circuit_buddh_drs">Dos zonas - recta principal y antes de la curva 4.</string>
+
+    <string name="circuit_valencia_main">El Valencia Street Circuit es un circuito urbano de 5.419 km con 25 curvas.</string>
+    <string name="circuit_valencia_characteristics">Rodeaba el puerto de Valencia con vistas al mar Mediterráneo.</string>
+    <string name="circuit_valencia_challenges">Secciones estrechas entre muros con mínimo margen de error.</string>
+    <string name="circuit_valencia_trivia">Escenario de un famoso adelantamiento de Fernando Alonso en 2012.</string>
+    <string name="circuit_valencia_drs">Dos zonas - recta principal y antes de la curva 12.</string>
+
+    <string name="circuit_yeongam_main">El Korean International Circuit es un circuito de 5.615 km con 18 curvas.</string>
+    <string name="circuit_yeongam_characteristics">Mezcla de secciones rápidas y técnicas, con el sector 1 parecido a un circuito permanente.</string>
+    <string name="circuit_yeongam_challenges">Baja asistencia y problemas organizativos.</string>
+    <string name="circuit_yeongam_trivia">Solo albergó F1 de 2010 a 2013, luego abandonado por falta de interés.</string>
+    <string name="circuit_yeongam_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+
+    <string name="circuit_fuji_main">El Fuji Speedway es un circuito de 4.563 km con 16 curvas.</string>
+    <string name="circuit_fuji_characteristics">Ubicado al pie del monte Fuji con una recta muy larga.</string>
+    <string name="circuit_fuji_challenges">Clima cambiante típico de la región.</string>
+    <string name="circuit_fuji_trivia">La última vez que albergó F1 fue en 2008 en una carrera memorable bajo la lluvia.</string>
+    <string name="circuit_fuji_drs">Dos zonas - recta principal y antes de la curva 10.</string>
+
+    <string name="circuit_adelaide_main">El Adelaide Street Circuit es un circuito urbano de 3.780 km con 16 curvas.</string>
+    <string name="circuit_adelaide_characteristics">Famoso por sus curvas cerradas y su carácter muy exigente.</string>
+    <string name="circuit_adelaide_challenges">Calles estrechas con mínimo margen de error.</string>
+    <string name="circuit_adelaide_trivia">Escenario de carreras decisivas por el título en 1986 y 1994.</string>
+    <string name="circuit_adelaide_drs">Sin zonas DRS (el circuito se usaba antes de la era DRS).</string>
+
+    <string name="circuit_mugello_main">El Mugello Circuit es un circuito de 5.245 km con 15 curvas.</string>
+    <string name="circuit_mugello_characteristics">Pista de pruebas de Ferrari con curvas rápidas y fluidas y grandes cambios de elevación.</string>
+    <string name="circuit_mugello_challenges">Curvas de alta velocidad que exigen una línea perfecta.</string>
+    <string name="circuit_mugello_trivia">Solo acogió F1 una vez en 2020 por la pandemia, con un récord de sanciones.</string>
+    <string name="circuit_mugello_drs">Dos zonas - recta principal y antes de la curva 1.</string>
+</resources>
+
