@@ -62,8 +62,8 @@ class SettingsActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-        val savedSeason = prefs.getString("selected_season", "2025") ?: "2023"
-        val seasons = (1950..2025).map { it.toString() }
+        val savedSeason = prefs.getString("selected_season", "2026") ?: "2026"
+        val seasons = (1950..2026).map { it.toString() }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, seasons)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.seasonSelector.adapter = adapter

@@ -5,9 +5,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object StandingsApiClient {
+object JolpicaClient {
 
-    private const val BASE_URL = "https://f1-live-standings-api.onrender.com/"
+    private const val BASE_URL = "https://api.jolpi.ca/ergast/f1/"
 
     fun getInstance(): Retrofit {
         val loggingInterceptor = HttpLoggingInterceptor().apply {

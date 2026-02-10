@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object OpenF1Client {
 
-    private const val BASE_URL = "https://f1-live-standings-api.onrender.com/"
+    private const val BASE_URL = "https://api.openf1.org/v1/"
 
     fun getInstance(): Retrofit {
         val loggingInterceptor = HttpLoggingInterceptor().apply {

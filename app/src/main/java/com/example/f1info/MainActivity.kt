@@ -1,14 +1,9 @@
 package com.example.f1info
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.f1info.databinding.ActivityMainBinding
@@ -37,29 +32,6 @@ class MainActivity : AppCompatActivity() {
             else AppCompatDelegate.MODE_NIGHT_NO
         )
 
-        val channel = NotificationChannel(
-            "f1_channel",
-            "Powiadomienia F1",
-            NotificationManager.IMPORTANCE_HIGH
-        ).apply {
-            description = "Powiadomienia o nadchodzących wyścigach"
-        }
-
-        val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        manager.createNotificationChannel(channel)
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)
-                != PackageManager.PERMISSION_GRANTED
-            ) {
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
-                    1001
-                )
-            }
-        }
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -69,20 +41,20 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, RaceInfoFragment())
             .commit()
 
-        binding.toolbar.title = "Informacje o wyścigu"
+        binding.toolbar.title = "Informacje o wyscigu"
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_race -> {
-                    loadFragment(RaceInfoFragment(), "Informacje o wyścigu")
+                    loadFragment(RaceInfoFragment(), "Informacje o wyscigu")
                     true
                 }
                 R.id.nav_drivers -> {
-                    loadFragment(DriverStandingsFragment(), "Klasyfikacja kierowców")
+                    loadFragment(DriverStandingsFragment(), "Klasyfikacja kierowcow")
                     true
                 }
                 R.id.nav_teams -> {
-                    loadFragment(TeamStandingsFragment(), "Klasyfikacja konstruktorów")
+                    loadFragment(TeamStandingsFragment(), "Klasyfikacja konstruktorow")
                     true
                 }
                 R.id.nav_calendar -> {
@@ -124,7 +96,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.f1_logo
         }
 
-
         val teamLogo = findViewById<ImageView>(R.id.teamLogoBackground)
         teamLogo.setImageResource(logoRes)
 
@@ -158,7 +129,6 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.itemTextColor = ContextCompat.getColorStateList(this, R.color.nav_icon_color)
     }
 
-
     override fun onResume() {
         super.onResume()
         applyTeamTheme()
@@ -177,5 +147,4 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }

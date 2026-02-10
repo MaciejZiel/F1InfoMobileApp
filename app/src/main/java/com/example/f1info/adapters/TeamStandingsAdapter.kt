@@ -29,7 +29,7 @@ class TeamStandingsAdapter : ListAdapter<ConstructorStanding, TeamStandingsAdapt
         val constructor = getItem(position)
         holder.binding.tvPosition.text = constructor.position.toString()
         holder.binding.tvTeamName.text = constructor.constructor_name
-        holder.binding.tvPoints.text = "${constructor.points.toInt()} pts"
+        holder.binding.tvPoints.text = "${formatPoints(constructor.points)} pts"
 
         val teamColors = mapOf(
             "RED BULL RACING" to ContextCompat.getColor(holder.binding.tvPosition.context, R.color.redbull_blue),
@@ -53,6 +53,14 @@ class TeamStandingsAdapter : ListAdapter<ConstructorStanding, TeamStandingsAdapt
 
 
     class ViewHolder(internal val binding: ItemTeamStandingBinding) : RecyclerView.ViewHolder(binding.root) {
+    }
+
+    private fun formatPoints(points: Double): String {
+        return if (points % 1.0 == 0.0) {
+            points.toInt().toString()
+        } else {
+            points.toString()
+        }
     }
 
     private class DiffCallback : DiffUtil.ItemCallback<ConstructorStanding>() {

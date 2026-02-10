@@ -33,13 +33,16 @@ class DriverStandingsAdapter :
                 putExtra("points", driver.points)
                 putExtra("image_url", driver.picture_url)
                 putExtra("base_podiums", driver.basePodiums)
+                putExtra("driver_id", driver.driverId)
+                putExtra("driver_number", driver.driverNumber ?: -1)
+                putExtra("championship_position", driver.position)
             }
             context.startActivity(intent)
         }
 
         holder.binding.tvDriverName.text = "${driver.name} ${driver.surname}"
         holder.binding.tvTeamName.text = driver.team
-        holder.binding.tvPoints.text = "${driver.points} pts"
+        holder.binding.tvPoints.text = "${formatPoints(driver.points)} pts"
 
         val teamLogos = mapOf(
             "RED BULL RACING" to R.drawable.redbull_logo_standing,
@@ -60,6 +63,14 @@ class DriverStandingsAdapter :
 
 
     class DriverViewHolder(val binding: ItemDriverStandingBinding) : RecyclerView.ViewHolder(binding.root)
+
+    private fun formatPoints(points: Double): String {
+        return if (points % 1.0 == 0.0) {
+            points.toInt().toString()
+        } else {
+            points.toString()
+        }
+    }
 
     class DiffCallback : DiffUtil.ItemCallback<DriverStanding>() {
         override fun areItemsTheSame(oldItem: DriverStanding, newItem: DriverStanding): Boolean {

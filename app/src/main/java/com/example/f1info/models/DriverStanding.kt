@@ -5,8 +5,10 @@ data class DriverStanding(
     val surname: String,
     val team: String,
     val position: Int,
-    val points: Int,
+    val points: Double,
     val picture_url: String,
+    val driverId: String? = null,
+    val driverNumber: Int? = null,
     val basePodiums: Int = getBasePodiums("$name $surname")
 )
 

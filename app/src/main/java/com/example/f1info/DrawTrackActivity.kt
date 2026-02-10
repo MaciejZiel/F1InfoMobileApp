@@ -41,7 +41,7 @@ class DrawTrackActivity : AppCompatActivity() {
         carIcon.x = points[0].x - carIcon.width / 2
         carIcon.y = points[0].y - carIcon.height / 2
         val animator = ValueAnimator.ofInt(0, points.size - 1)
-        animator.duration = 4000L // 4 sekundy jazdy
+        animator.duration = 4000L
         animator.interpolator = LinearInterpolator()
         animator.addUpdateListener { valueAnimator ->
             val index = valueAnimator.animatedValue as Int
