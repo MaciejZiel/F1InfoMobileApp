@@ -57,7 +57,7 @@ class RaceInfoFragment : Fragment() {
             } catch (e: Exception) {
                 if (e.message != "Job was cancelled") {
                     context?.let {
-                        Toast.makeText(it, "Blad: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(it, "Błąd: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
             } finally {
@@ -97,7 +97,7 @@ class RaceInfoFragment : Fragment() {
                 }
             }
         } else {
-            "Wyniki jeszcze niedostepne"
+            "Wyniki jeszcze niedostępne"
         }
 
         val displayDate = formatOpenF1Date(session.date_start)
@@ -125,7 +125,7 @@ class RaceInfoFragment : Fragment() {
                 }
             }
         } else {
-            "Wyniki jeszcze niedostepne"
+            "Wyniki jeszcze niedostępne"
         }
 
         val displayDate = formatErgastDate(race.date, race.time)

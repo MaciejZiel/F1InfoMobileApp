@@ -41,20 +41,20 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, RaceInfoFragment())
             .commit()
 
-        binding.toolbar.title = "Informacje o wyscigu"
+        binding.toolbar.title = "Informacje o wyścigu"
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_race -> {
-                    loadFragment(RaceInfoFragment(), "Informacje o wyscigu")
+                    loadFragment(RaceInfoFragment(), "Informacje o wyścigu")
                     true
                 }
                 R.id.nav_drivers -> {
-                    loadFragment(DriverStandingsFragment(), "Klasyfikacja kierowcow")
+                    loadFragment(DriverStandingsFragment(), "Klasyfikacja kierowców")
                     true
                 }
                 R.id.nav_teams -> {
-                    loadFragment(TeamStandingsFragment(), "Klasyfikacja konstruktorow")
+                    loadFragment(TeamStandingsFragment(), "Klasyfikacja konstruktorów")
                     true
                 }
                 R.id.nav_calendar -> {

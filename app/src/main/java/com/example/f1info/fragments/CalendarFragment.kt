@@ -87,10 +87,10 @@ class CalendarFragment : Fragment() {
                 }
 
                 adapter.notifyDataSetChanged()
-                Log.d("CalendarDebug", "Zaladowano ${raceList.size} wyscigow (sezon $activeSeason)")
+                Log.d("CalendarDebug", "Załadowano ${raceList.size} wyścigów (sezon $activeSeason)")
 
             } catch (e: Exception) {
-                Log.e("CalendarDebug", "Blad ladowania kalendarza: ${e.message}", e)
+                Log.e("CalendarDebug", "Błąd ładowania kalendarza: ${e.message}", e)
             }
         }
     }
